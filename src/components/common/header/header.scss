@@ -1,10 +1,11 @@
-.head{
+#head{
   width: 100%;
   height: 100vh;
-  background: url("../../../assets/img/background-test.jpg") center/cover, #000b;
-  background-blend-mode: multiply;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-color: #0009;
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60% 40%;
 }
 #navbar{
   width: 50%;
@@ -15,6 +16,9 @@
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 10;
 }
 .itemNav{
   font-size: 1.2em;
@@ -28,4 +32,25 @@
 }
 .link{
   text-decoration: none;
+}
+.imgC{
+  grid-column: 1;
+  grid-row: 1/3;
+  height: 100vh;
+  width: 100%;
+}
+#black{
+  grid-column: 1;
+  grid-row: 1/3;
+  height: 100vh;
+  width: 100%;
+  background-color: #0008;
+  z-index: 5;
+}
+@keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
 }
