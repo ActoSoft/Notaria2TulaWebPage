@@ -1,66 +1,51 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 import './header.scss'
 import {NavLink} from 'react-router-dom'
 
 class Header extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      images: [
-        <img
-          src="https://i.pinimg.com/originals/33/8a/55/338a55304e6dc72ef9258968ce045e8d.jpg"
-          className="imgC"
-        />,
-        <img
-          src="https://i.pinimg.com/originals/64/b9/63/64b9634b39a79d231b844e4e6d84d48c.jpg"
-          className="imgC"
-        />,
-        <img
-          src="http://4.bp.blogspot.com/-mJd3yzNM0VQ/Uq9Vf0VJ6UI/AAAAAAAASio/KGtrBYfwmBY/s1600/imagenes-paisaje-5.jpg"
-          className="imgC"
-        />
-      ],
-      cont: 0,
-      interval: null
-    };
+  constructor(props){
+    super(props)
+    this.state={}
   }
 
-  componentDidMount(){
-    let { interval } = this.state;
-    interval = window.setInterval(this.change, 5000);
-    this.setState({ interval });
+  updateOptions = () =>{
+    let width = window.innerWidth
+    let containerC = document.getElementById('deleteC')
+    let contacto = document.getElementById('contacto')
+    let contact = document.createElement("li")
+    let text = document.createTextNode("Contacto")
+
+    //options != null ? alert("Si hay") : alert("no hay")
+
+    //alert(width)
+    //if (width<=730) {
+      //containerC.removeChild(contacto);
+    //}
   }
 
-  change = () =>{
-    let { cont } = this.state;
-    cont = cont + 1;
-    cont >= 3 ? (cont = 0) : cont=cont;
-    cont < 0 ? (cont = 2) : cont=cont;
-    this.setState({ cont });
+  componentDidMount = () =>{
+    window.addEventListener('resize', this.updateOptions);
   }
 
   render(){
     return(
       <div id="head">
-        {this.state.images[this.state.cont]}
-        <div id="black"></div>
         <ul id="navbar">
-          <NavLink to="/" className="link">
-            <li className="itemNav">Home</li>
+          <NavLink to="/" className="link" id="deleteI">
+            <li className="itemNav" id="inicio">Inicio</li>
           </NavLink>
-          <NavLink to="/nosotros/" className="link">
-            <li className="itemNav">Información</li>
+          <hr/>
+          <NavLink to="/nosotros/" className="link" id="deleteN">
+            <li className="itemNav" id="nosotros">Nosotros</li>
           </NavLink>
-          <NavLink to="/tramites/" className="link">
-            <li className="itemNav">Servicios</li>
+          <hr/>
+          <NavLink to="/tramites/" className="link" id="deleteT">
+            <li className="itemNav" id="tramites">Tramites</li>
           </NavLink>
-          <NavLink to="/contacto/" className="link">
-            <li className="itemNav">Contacto</li>
+          <hr/>
+          <NavLink to="/contacto/" className="link" id="deleteC">
+            <li className="itemNav" id="contacto">Contacto</li>
           </NavLink>
-          <NavLink to="/tramites/:slug/" className="link">
-            <li className="itemNav">Servicio</li>
-          </NavLink>
-          <li></li>
         </ul>
       </div>
     )
