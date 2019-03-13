@@ -1,0 +1,22 @@
+#footer{
+  background-color: #05d;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#footer > span{
+  font-size: 1em;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  width: 30%;
+}
+#footer > span > a{
+  color: #fff;
+  text-align: center;
+}
+#privacityAdvice > a{
+  font-size: 1.1em;
+  font-weight: 600;
+}

@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import './homepage.scss'
+import location from '../../assets/img/location.png'
+import clock from '../../assets/img/clock.svg'
+import email from '../../assets/img/email.svg'
+import phone from '../../assets/img/phone.svg'
+import placeholder from '../../assets/img/placeholder-map.svg'
 
 class HomePage extends Component {
 
@@ -7,12 +12,12 @@ class HomePage extends Component {
       super(props)
       this.state = {
         urls:[
-          "https://i.pinimg.com/originals/33/8a/55/338a55304e6dc72ef9258968ce045e8d.jpg",
-          "https://i.pinimg.com/originals/64/b9/63/64b9634b39a79d231b844e4e6d84d48c.jpg",
-          "http://4.bp.blogspot.com/-mJd3yzNM0VQ/Uq9Vf0VJ6UI/AAAAAAAASio/KGtrBYfwmBY/s1600/imagenes-paisaje-5.jpg"
+          "https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/2018-01/tula-hidalgo.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kiosktula.JPG/1200px-Kiosktula.JPG",
+          "http://www.miambiente.com.mx/wp-content/uploads/Ex-convento-de-San-Jose-Tula.jpg"
         ],
         cont: 1,
-        interval: null
+        interval: null,
       }
   }
 
@@ -69,7 +74,61 @@ class HomePage extends Component {
           ewvñtyvbw oapytpwuer ytnv8wryb t0vw9ayt 9bpw9pvetu
           twevi ewyoyvwevrwteb w tgwj0igtw 0irhgt9wrhg0hwr0gh 0iwrhg0w 0gi hwa0ig h0wihg0 innerWidthf rwiahr0gi w0 gw0i hy0
           f wiuo wiyf9 uhwro ghwoa ghowrhg orhgo wrigh owuhg owurhg wauhrgou awhfeowuehf o<i>Continuar leyendo...</i></p>
+          <div className="question">
+            <span>¿Tienes algún problema legal?</span>
+            <button>Trámites disponibles</button>
+          </div>
+        </div>
+        <div id="viewProcedures">
+          <span>Trámites que realizamos</span>
           <div id="procedureContainer">
+            <div>
+              <p>Trámites de propiedad / bienes inmuebles <button>+</button></p>
+            </div>
+            <div>
+              <p>Suceciones  <button>+</button></p>
+            </div>
+            <div>
+              <p>Constitucion de sociedades <button>+</button></p>
+            </div>
+            <div>
+              <p>Testamentos <button>+</button></p>
+            </div>
+            <div>
+              <p>Trámites diversos <button>+</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="informationContainer">
+          <div id="partOneIC">
+            <div>
+              <div className="infoCard">
+                <img src={placeholder}/>
+                <p>Calle Matamoros Número 204, Colonia Barrio Alto,
+                Municipio de Tula Allende, Hidalgo, Código Postal 42807</p>
+              </div>
+              <div className="infoCard">
+                <img src={email}/>
+                <p>correodummy@gmail.com</p>
+              </div>
+              <div className="infoCard">
+                <img src={phone}/>
+                <p><span>(01) 773-73-2-00-75</span>
+                <span>&</span><span>(01) 773-73-201-91</span></p>
+              </div>
+            </div>
+            <img src={location} id="map"/>
+          </div>
+        </div>
+        <div id="partTwoIC">
+          <div className="infoCard">
+            <img src={clock}/>
+            <p><span>Lunes a Viernes: 9:00 hrs. - 18:00 hrs.</span>
+            <span>Sábados: 9:00 hrs. - 13:00 hrs.</span>
+            <span>Domingos: No laboramos</span></p>
+          </div>
+          <div className="question">
             <span>¿Tienes algún problema legal?</span>
             <button>Trámites disponibles</button>
           </div>
