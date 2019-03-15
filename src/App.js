@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/common/header/Header'
+import HeaderMobile from './components/common/header/HeaderMobile'
 import Footer from './components/common/footer/Footer'
 
 import HomePage from './components/homepage/HomePage'
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-
+        <HeaderMobile />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/nosotros/" component={Info} />

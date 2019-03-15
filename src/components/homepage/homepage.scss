@@ -116,7 +116,9 @@
     font-size: 1.5em;
   }
   @media screen and (max-width: 525px){
-    font-size: 1.2em;
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-left: 0;
   }
 }
 #descContainer{
@@ -338,5 +340,19 @@
     opacity: 0;
   }to{
     opacity: 1;
+  }
+}
+
+
+.image-mobile{
+  margin: 5vh 0;
+  display: none;
+  width: 100vw;
+  @media screen and(max-width: 525px) {
+    display: block;
+    
+  }
+  @media screen and(min-width: 525px) {
+    display: nones;
   }
 }
