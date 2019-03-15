@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import './homepage.scss'
-import location from '../../assets/img/location.png'
-import clock from '../../assets/img/clock.svg'
-import email from '../../assets/img/email.svg'
-import phone from '../../assets/img/phone.svg'
-import placeholder from '../../assets/img/placeholder-map.svg'
+import location from '../../static/img/location.png'
+import clock from '../../static/img/clock.svg'
+import email from '../../static/img/email.svg'
+import phone from '../../static/img/phone.svg'
+import placeholder from '../../static/img/placeholder-map.svg'
+import back1 from '../../static/assets/back1.jpeg'
+import back2 from '../../static/assets/back2.jpeg'
+import back3 from '../../static/assets/back3.jpeg'
 
 class HomePage extends Component {
 
@@ -12,9 +15,9 @@ class HomePage extends Component {
       super(props)
       this.state = {
         urls:[
-          "https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/2018-01/tula-hidalgo.jpg",
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kiosktula.JPG/1200px-Kiosktula.JPG",
-          "http://www.miambiente.com.mx/wp-content/uploads/Ex-convento-de-San-Jose-Tula.jpg"
+          back1,
+          back2,
+          back3
         ],
         cont: 1,
         interval: null,
@@ -48,8 +51,12 @@ class HomePage extends Component {
     let container=document.getElementById('sliderContainer');
 
     image ? container.removeChild(image) : console.log("no hay");
-    cont>=3 ? cont=0 : cont=cont;
-    cont<0 ? cont=2 : cont=cont;
+    /*cont >= 3 ? cont=0 : ;
+    cont<0 ? cont=2 : cont=cont;*/
+    if(cont >= 3)
+      cont = 0
+    else if(cont < 0)
+      cont = 2
     let newImg = document.createElement("img");
     newImg.setAttribute('src', this.state.urls[cont]);
     newImg.setAttribute('id', "imgC");
@@ -67,17 +74,16 @@ class HomePage extends Component {
           <p id="place">Notaría 2 - Tula, Hgo.</p>
           <button id="btnConocenos">Conócenos</button>
         </div>
+        <div className="aboutContainer">
         <p id="fullPlace">Notaria Pública #2 del Distrito Judicial de Tula
         de Allende, Hidalgo, y del Patrimonio Inmobiliario Federal</p>
         <div id="descContainer">
-          <p id="description">or hgoihpor wib gvporiugpb esp aytrvyawvoi troaibeshto pihweortvba tvbwaiy
-          ewvñtyvbw oapytpwuer ytnv8wryb t0vw9ayt 9bpw9pvetu
-          twevi ewyoyvwevrwteb w tgwj0igtw 0irhgt9wrhg0hwr0gh 0iwrhg0w 0gi hwa0ig h0wihg0 innerWidthf rwiahr0gi w0 gw0i hy0
-          f wiuo wiyf9 uhwro ghwoa ghowrhg orhgo wrigh owuhg owurhg wauhrgou awhfeowuehf o<i>Continuar leyendo...</i></p>
+          <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i>Continuar leyendo...</i></p>
           <div className="question">
             <span>¿Tienes algún problema legal?</span>
             <button>Trámites disponibles</button>
           </div>
+        </div>
         </div>
         <div id="viewProcedures">
           <span>Trámites que realizamos</span>

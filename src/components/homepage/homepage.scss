@@ -1,3 +1,4 @@
+
 #sliderContainer{
   width: 100%;
   height: 100vh;
@@ -5,7 +6,7 @@
   grid-template-columns: 1fr 40% 1fr;
   grid-template-rows: 40% 20% 1fr 10% 1fr;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 #imgC{
   grid-column: 1/4;
@@ -26,7 +27,18 @@
   width: 100%;
   background-color: #fff6;
   z-index: 1;
+
 }
+
+.aboutContainer{ 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 10vw;
+}
+
 #place{
   grid-column: 1/4;
   grid-row: 2;
@@ -75,6 +87,7 @@
   font-size: 1.5em;
   min-width: 120px;
   min-height: 30px;
+  box-shadow: 2px 2px 2px 0 #000;
   z-index: 3;
   @media screen and (max-height: 450px){
     font-size: 1em;
@@ -125,23 +138,33 @@
   align-items: center;
   max-width: 45%;
   margin: 0;
+  font-size: 1.2em;
   @media screen and (max-width: 644px){
     max-width: 90%
   }
 }
 #descContainer > p > i{
   font-size: 1.3em;
-  color: #05b;
-  margin: 10px 0;
+  color: #006BC7;
+  margin: 20px 0;
+  font-weight: 700;
   text-align: center;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
 }
+
+
 .question{
-  min-width: 45%;
+  min-width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid #000;
+  border-radius: 10px;
+  padding: 50px 20px;
 }
 .question > span{
   font-size: 1.5em;
@@ -152,20 +175,25 @@
 
 }
 .question > button{
-  border-radius: 5px;
+  border-radius: 10px;
   color: #fff;
   background-color: #000;
   padding: 10px 20px;
-  font-size: 1em;
-  margin-bottom: 30px;
+  font-size: 1.5em;
+  //margin-bottom: 30px;
 }
 
 #viewProcedures{
   margin-top: 20px;
   min-height: 260px;
+  height: 100vh;
   width: 100%;
   background: url("https://wwwassets.rand.org/content/rand/education-and-labor/projects/american-worker/jcr:content/par/herotitle.aspectfit.0x0.jpg/1503946540882.jpg") center/cover, #fff7;
   background-blend-mode: lighten;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #viewProcedures > span {
   width: fit-content;
@@ -181,6 +209,7 @@
   border: 1px solid #000;
   width: fit-content;
   width: 80%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;

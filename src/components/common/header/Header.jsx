@@ -40,7 +40,7 @@ class Header extends Component{
           </NavLink>
           <hr/>
           <NavLink to="/tramites/" className="link" id="deleteT">
-            <li className="itemNav" id="tramites">Tramites</li>
+            <li className="itemNav" id="tramites">Trámites</li>
           </NavLink>
           <hr/>
           <NavLink to="/contacto/" className="link" id="deleteC">
