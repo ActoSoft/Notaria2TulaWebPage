@@ -5,6 +5,7 @@ import Header from './components/common/header/Header'
 import Footer from './components/common/footer/Footer'
 
 import HomePage from './components/homepage/HomePage'
+import HeaderMobile from './components/common/header/HeaderMobile'
 import Info from './components/info/Info'
 import Services from './components/services/list/Services'
 import Contact from './components/contact/Contact'
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-
+        <HeaderMobile />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/nosotros/" component={Info} />
@@ -26,7 +27,7 @@ class App extends Component {
           <Route component={NotFound} />
         </Switch>
 
-        <Footer />        
+        <Footer />
       </div>
     );
   }

@@ -8,21 +8,6 @@ class Header extends Component{
     this.state={}
   }
 
-  updateOptions = () =>{
-    let width = window.innerWidth
-    let containerC = document.getElementById('deleteC')
-    let contacto = document.getElementById('contacto')
-    let contact = document.createElement("li")
-    let text = document.createTextNode("Contacto")
-
-    //options != null ? alert("Si hay") : alert("no hay")
-
-    //alert(width)
-    //if (width<=730) {
-      //containerC.removeChild(contacto);
-    //}
-  }
-
   componentDidMount = () =>{
     window.addEventListener('resize', this.updateOptions);
   }
@@ -40,7 +25,7 @@ class Header extends Component{
           </NavLink>
           <hr/>
           <NavLink to="/tramites/" className="link" id="deleteT">
-            <li className="itemNav" id="tramites">Tramites</li>
+            <li className="itemNav" id="tramites">Trámites</li>
           </NavLink>
           <hr/>
           <NavLink to="/contacto/" className="link" id="deleteC">
