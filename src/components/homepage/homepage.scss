@@ -81,6 +81,9 @@
     font-size: 1.1em;
     text-transform: uppercase;
   }
+  &:hover > .aboutContainer{
+    transform: translateY(-100vh);
+  }
 }
 
 #fullPlace{
@@ -113,6 +116,7 @@
   align-items: center;
   justify-content: space-around;
   margin: 0 10vw;
+  transition: transform 0.6s ease-in-out;
 }
 
 #descContainer{

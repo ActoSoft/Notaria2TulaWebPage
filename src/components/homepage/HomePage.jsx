@@ -70,15 +70,31 @@ class HomePage extends Component {
     this.setState({cont});
   }
 
+  goKnowUs = () => {
+    let top = document.getElementById('abCont').offsetTop
+    console.log(top)
+    let scrollStep = top / (1000/15)
+    let counter = window.scrollY
+    let scrollInterval = setInterval(()=>{
+      if(counter<=top){
+        console.log(window.innerHeight)
+        window.scrollBy(0, scrollStep)
+        counter+=scrollStep
+      }else{
+        clearInterval(scrollInterval)
+      }
+    }, 30)
+  }
+
   render(){
     return(
-      <div>
+      <div id="homeContent">
         <div id="sliderContainer">
           <div id="black"></div>
           <p id="place">Notaría 2 - Tula, Hgo.</p>
-          <button id="btnConocenos">Conócenos</button>
+          <button id="btnConocenos" onClick={this.goKnowUs}>Conócenos</button>
         </div>
-        <div className="aboutContainer">
+        <div className="aboutContainer" id="abCont">
           <p id="fullPlace">Notaria Pública #2 del Distrito Judicial de Tula
           de Allende, Hidalgo, y del Patrimonio Inmobiliario Federal</p>
           <div id="descContainer">
