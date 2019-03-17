@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './homepage.scss'
-import location from '../../static/img/location.png'
+import location from '../../static/assets/placeInMap.png'
 import clock from '../../static/img/clock.svg'
 import email from '../../static/img/email.svg'
 import phone from '../../static/img/phone.svg'
@@ -10,6 +10,7 @@ import money from '../../static/assets/Icons/money (2).png'
 import donate from '../../static/assets/Icons/donate.png'
 import leftArrow from '../../static/assets/Icons/left-arrow.png'
 import rightArrow from '../../static/assets/Icons/right-arrow.png'
+import plus from '../../static/assets/Icons/plus.png'
 import back1 from '../../static/assets/back1.jpeg'
 import back2 from '../../static/assets/back2.jpeg'
 import back3 from '../../static/assets/back3.jpeg'
@@ -98,7 +99,7 @@ class HomePage extends Component {
           <span>Trámites que realizamos</span>
           <div id="procedureContainer">
             <div>
-              <p id="firstProcedure">Trámites de propiedad / bienes inmuebles <button>+</button></p>
+              <p id="firstProcedure">Trámites de propiedad / bienes inmuebles <img src={plus} alt="plus"/></p>
               <div class="optionsProcedures">
                 <img src={leftArrow} alt="left"/>
                 <div id="procedureJL">
@@ -117,16 +118,16 @@ class HomePage extends Component {
               </div>
             </div>
             <div>
-              <p>Suceciones  <button>+</button></p>
+              <p>Suceciones  <img src={plus} alt="plus"/></p>
             </div>
             <div>
-              <p>Constitucion de sociedades <button>+</button></p>
+              <p>Constitucion de sociedades <img src={plus} alt="plus"/></p>
             </div>
             <div>
-              <p>Testamentos <button>+</button></p>
+              <p>Testamentos <img src={plus} alt="plus"/></p>
             </div>
             <div>
-              <p id="lastProcedure">Trámites diversos <button>+</button></p>
+              <p id="lastProcedure">Trámites diversos <img src={plus} alt="plus"/></p>
             </div>
           </div>
         </div>
@@ -157,9 +158,10 @@ class HomePage extends Component {
               <span>Sábados: 9:00 hrs. - 13:00 hrs.</span>
               <span>Domingos: No laboramos</span></p>
             </div>
+            <hr className="division"/>
             <div className="question">
-              <span>¿Tienes algún problema legal?</span>
-              <button>Trámites disponibles</button>
+              <span>¿Desea realizar algún trámite con nosotros?</span>
+              <button>Contáctanos</button>
             </div>
           </div>
         </div>
