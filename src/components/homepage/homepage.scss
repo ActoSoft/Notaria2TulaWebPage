@@ -70,6 +70,7 @@
 }
 
 #btnConocenos{
+  cursor: pointer;
   grid-row: 4;
   grid-column: 2;
   display: block;
@@ -156,6 +157,7 @@
   }
 }
 #descContainer > p > i{
+  cursor: pointer;
   font-size: 1.3em;
   color: #006BC7;
   margin: 20px 0;
@@ -217,6 +219,7 @@
 
 }
 .question > button{
+  cursor: pointer;
   border-radius: 10px;
   color: #fff;
   background-color: #000;
