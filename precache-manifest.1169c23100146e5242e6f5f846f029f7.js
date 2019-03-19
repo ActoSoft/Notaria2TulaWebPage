@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/Notaria2TulaWebPage/static/media/clock.e56f132e.svg"
   },
   {
-    "revision": "f11b39668738add633b2",
-    "url": "/Notaria2TulaWebPage/static/css/main.6e1da065.chunk.css"
+    "revision": "e1cc636ac8fc01a0ba67",
+    "url": "/Notaria2TulaWebPage/static/css/main.79f4346f.chunk.css"
   },
   {
     "revision": "a8768195917a920252b5",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/Notaria2TulaWebPage/static/media/Sign.f4a51c49.jpg"
   },
   {
-    "revision": "f11b39668738add633b2",
-    "url": "/Notaria2TulaWebPage/static/js/main.f11b3966.chunk.js"
+    "revision": "e1cc636ac8fc01a0ba67",
+    "url": "/Notaria2TulaWebPage/static/js/main.e1cc636a.chunk.js"
   },
   {
     "revision": "cfc961043df8588da4e13d60d56876c5",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/Notaria2TulaWebPage/static/media/placeInMap.428dd1a4.png"
   },
   {
-    "revision": "ed8e95050239b47ba636e7107993e1e7",
+    "revision": "39cec47b1c4732c5d187f2aaf2dbcbaa",
     "url": "/Notaria2TulaWebPage/index.html"
   }
 ];
