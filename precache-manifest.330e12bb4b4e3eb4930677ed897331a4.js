@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "da2119b694f4a3827cc37cb01b172c31",
-    "url": "/Notaria2TulaWebPage/static/media/Sign.da2119b6.jpg"
+    "revision": "e56f132e43770d17d1e05a60f68a129a",
+    "url": "/Notaria2TulaWebPage/static/media/clock.e56f132e.svg"
   },
   {
-    "revision": "2659013e3265609c2b3a",
-    "url": "/Notaria2TulaWebPage/static/css/main.c2f4f7a7.chunk.css"
+    "revision": "f11b39668738add633b2",
+    "url": "/Notaria2TulaWebPage/static/css/main.6e1da065.chunk.css"
   },
   {
     "revision": "a8768195917a920252b5",
@@ -20,20 +20,20 @@ self.__precacheManifest = [
     "url": "/Notaria2TulaWebPage/static/media/Back1.770e7eb6.jpg"
   },
   {
-    "revision": "80c5f3e4f5177daf25c5cda4f0f402c6",
-    "url": "/Notaria2TulaWebPage/static/media/Back2.80c5f3e4.jpg"
+    "revision": "a6859f8c9fae1b08f3febf2898d2cfc4",
+    "url": "/Notaria2TulaWebPage/static/media/Back2.a6859f8c.jpg"
   },
   {
-    "revision": "de4f4b1038c42bdfccea43b1dd22f0ec",
-    "url": "/Notaria2TulaWebPage/static/media/Back3.de4f4b10.jpg"
+    "revision": "bc74c3a89dee9861fa1d7296b775b439",
+    "url": "/Notaria2TulaWebPage/static/media/Back3.bc74c3a8.jpg"
   },
   {
-    "revision": "2659013e3265609c2b3a",
-    "url": "/Notaria2TulaWebPage/static/js/main.2659013e.chunk.js"
+    "revision": "f4a51c49a438ef0061ff183d304c6b41",
+    "url": "/Notaria2TulaWebPage/static/media/Sign.f4a51c49.jpg"
   },
   {
-    "revision": "e56f132e43770d17d1e05a60f68a129a",
-    "url": "/Notaria2TulaWebPage/static/media/clock.e56f132e.svg"
+    "revision": "f11b39668738add633b2",
+    "url": "/Notaria2TulaWebPage/static/js/main.f11b3966.chunk.js"
   },
   {
     "revision": "cfc961043df8588da4e13d60d56876c5",
@@ -52,11 +52,19 @@ self.__precacheManifest = [
     "url": "/Notaria2TulaWebPage/static/media/Logo_transparencia.8a94c9c0.png"
   },
   {
+    "revision": "f4a51c49a438ef0061ff183d304c6b41",
+    "url": "/Notaria2TulaWebPage/static/media/procedures-desktop.f4a51c49.jpg"
+  },
+  {
+    "revision": "942bb7e12d459db71995aab495ae0ecf",
+    "url": "/Notaria2TulaWebPage/static/media/procedures-mobile.942bb7e1.jpg"
+  },
+  {
     "revision": "428dd1a43469b100154caf697e172582",
     "url": "/Notaria2TulaWebPage/static/media/placeInMap.428dd1a4.png"
   },
   {
-    "revision": "f85437e9b0c390d64a41dd7e93817368",
+    "revision": "ed8e95050239b47ba636e7107993e1e7",
     "url": "/Notaria2TulaWebPage/index.html"
   }
 ];
