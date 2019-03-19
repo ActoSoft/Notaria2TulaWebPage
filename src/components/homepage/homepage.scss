@@ -236,8 +236,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("https://wwwassets.rand.org/content/rand/education-and-labor/projects/american-worker/jcr:content/par/herotitle.aspectfit.0x0.jpg/1503946540882.jpg") center/cover, #fff7;
+  background: url("../../static/img/procedures-desktop.jpg") center/cover, #fff7;
   background-blend-mode: lighten;
+  @media screen and (max-width:664px){
+    background: url("../../static/img/procedures-mobile.jpg") center/cover, #fff7;
+  }
 }
 #viewProcedures > span {
   width: fit-content;
