@@ -2,6 +2,7 @@
   "name": "notaria-webpage",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://actosoft.github.io/Notaria2TulaWebPage/",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "firebase": "^5.8.4",
@@ -10,8 +11,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "homepage": "https://github.com/ActoSoft/Notaria2TulaWebPage"
+    "react-scripts": "2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
