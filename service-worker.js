@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Notaria2TulaWebPage/precache-manifest.aab9c7a8927f5a695c9655dbda5d48a8.js"
+  "/Notaria2TulaWebPage/precache-manifest.a74649d796be98f1f4045d2ab8046d50.js"
 );
 
 workbox.clientsClaim();
