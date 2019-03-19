@@ -24,7 +24,8 @@ const InfoAbout = (props) => (
             <span>&</span><span>(01) 773-73-201-91</span></p>
             </div>
         </div>
-        <img src={location} id="map" alt="Mapa"/>
+        {/*<img src={location} id="map" alt="Mapa"/>*/}
+        <iframe title="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.9131865364257!2d-99.34580076574983!3d20.05407868518722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d22d6b4546bacf%3A0xc975d5f27b35a2ea!2sNotar%C3%ADa+P%C3%BAblica+No.+2!5e0!3m2!1ses!2smx!4v1553021271216" frameborder="0" allowfullscreen />
         </div>
         <div id="partTwoIC">
         <div className="infoCard">
