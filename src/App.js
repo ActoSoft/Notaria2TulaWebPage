@@ -19,7 +19,7 @@ class App extends Component {
         <Header />
         <HeaderMobile />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/index" component={HomePage} />
           <Route exact path="/nosotros/" component={Info} />
           <Route exact path="/tramites/" component={Services} />
           <Route exact path="/contacto/" component={Contact} />
