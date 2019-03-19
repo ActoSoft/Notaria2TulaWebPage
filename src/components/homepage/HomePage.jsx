@@ -6,6 +6,7 @@ import back3 from '../../static/img/Back3.jpg'
 import Slider from './Slider'
 import About from './About'
 import Procedures from './Procedures'
+import Sign from '../../static/img/Sign.jpg'
 import InfoAbout from './InfoAbout'
 
 class HomePage extends Component {
@@ -69,7 +70,7 @@ class HomePage extends Component {
         />
 
         <About 
-          imageMobile={back2}
+          imageMobile={Sign}
         />
         
         <Procedures />

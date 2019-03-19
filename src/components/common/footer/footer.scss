@@ -1,22 +1,48 @@
-#footer{
+#footer, #footer-mobile{
   background-color: #05d;
   padding: 10px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-#footer > span{
+
+#footer-mobile {
+  flex-direction: column;
+}
+#footer > span, #footer-mobile > span{
   font-size: 1em;
   font-weight: 400;
   color: #fff;
   text-align: center;
   width: 30%;
 }
-#footer > span > a{
+#footer-mobile > span{
+  width: 100%;
+  padding: 5px 0;
+}
+#footer > span > a, #footer-mobile > span > a{
   color: #fff;
   text-align: center;
 }
 #privacityAdvice > a{
   font-size: 1.1em;
   font-weight: 600;
+}
+
+@media screen and(max-width: 664px){
+  #footer{
+    display: none;
+  }
+  #footer-mobile{
+    display: flex;
+  }
+}
+
+@media screen and(min-width: 664px){
+  #footer{
+    display: flex;
+  }
+  #footer-mobile{
+    display: none;
+  }
 }
