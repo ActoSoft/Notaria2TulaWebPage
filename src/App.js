@@ -13,11 +13,32 @@ import Service from './components/services/detail/Service'
 
 import NotFound from './components/common/not_found/NotFound'
 class App extends Component {
+
+  constructor(props) {
+    super(props) 
+    this.state = {
+      sidebarActive: false
+    }
+  }
+
+  openSidebar = () => {
+    console.log("llego")
+    this.setState({sidebarActive: true})
+  }
+
+  closeSidebar = () => {
+    this.setState({sidebarActive: false})
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <HeaderMobile />
+        <HeaderMobile 
+          sidebar={this.state.sidebarActive}
+          openSidebar={this.openSidebar}
+          closeSidebar={this.closeSidebar}
+          />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/nosotros/" component={Info} />
