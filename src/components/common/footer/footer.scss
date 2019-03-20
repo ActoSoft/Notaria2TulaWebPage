@@ -1,5 +1,7 @@
+@import "../../../variables.scss";
+
 #footer, #footer-mobile{
-  background-color: #05d;
+  background-color: $black;
   padding: 10px 0;
   display: flex;
   justify-content: space-around;
@@ -12,7 +14,7 @@
 #footer > span, #footer-mobile > span{
   font-size: 1em;
   font-weight: 400;
-  color: #fff;
+  color: $white;
   text-align: center;
   width: 30%;
 }
@@ -21,7 +23,7 @@
   padding: 5px 0;
 }
 #footer > span > a, #footer-mobile > span > a{
-  color: #fff;
+  color: $white;
   text-align: center;
 }
 #privacityAdvice > a{
