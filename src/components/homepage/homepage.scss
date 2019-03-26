@@ -188,7 +188,7 @@
   min-width: 30%;
   max-width: 30%;
   display: flex;
-  margin-left: 15%;
+  margin-left: 15% !important;
   height: 100%;
   border-radius: 10px;
   padding: 50px 20px;
@@ -478,8 +478,8 @@
 
 }
 #partTwoIC > .question{
-  margin-left: 0;
-  margin-right: 5%;
+  margin-left: 0 !important;
+  margin-right: 5% !important;
   min-width: 30%;
   max-width: 30%;
   //margin-left: 10%;
