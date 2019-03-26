@@ -302,3 +302,15 @@
     width: 50%;
   }
 }
+
+.extlink {
+  text-decoration: none;
+}
+
+.extlink:hover {
+  text-decoration: underline;
+}
+
+.extlink:visited {
+  color: $primary;
+}
