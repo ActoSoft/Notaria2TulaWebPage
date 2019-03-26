@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './header.scss'
+import logo from '../../../static/assets/Logo_transparencia.png'
 import {NavLink} from 'react-router-dom'
 
 class Header extends Component{
@@ -15,6 +16,7 @@ class Header extends Component{
   render(){
     return(
       <div id="head">
+        <img src={logo} id="headerLogo"/>
         <ul id="navbar">
           <NavLink to="/" className="link" id="deleteI">
             <li className="itemNav" id="inicio">Inicio</li>

@@ -7,6 +7,16 @@
   top: 0;
   z-index: 900;
 }
+#headerLogo{
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  height: 50px;
+  margin: 0;
+  @media screen and (max-width: 720px){
+    display: none;
+  }
+}
 #navbar{
   width: 50%;
   margin: 0 0 0 45%;
