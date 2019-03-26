@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './info.scss'
-import weImage from '../../static/assets/weImage.jpeg'
+import aboutUs from '../../static/img/About.jpg'
 import logo from '../../static/assets/Logo_transparencia.png'
 import communication from '../../static/assets/Icons/communication.svg'
 import documentsSecurity from '../../static/assets/Icons/documents-security.svg'
@@ -23,7 +23,7 @@ class Info extends Component{
         <div id="infoPresentation">
           <div className="white"></div>
           <p className="place">¿Quienes sómos?</p>
-          <img src={weImage} alt="Nosotros" id="weImage"/>
+          <img src={aboutUs} alt="Nosotros" id="weImage"/>
         </div>
         <div className="aboutContainer">
           <p className="fullPlace">Notaria Pública #2 del Distrito Judicial de Tula
@@ -35,7 +35,9 @@ class Info extends Component{
               <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <img src={logo} alt="Notaria logo"/>
+            <div className="div-logo">
+              <img src={logo} alt="Notaria logo"/>
+            </div>
           </div>
         </div>
         <div className="weHaveServices">
@@ -68,8 +70,8 @@ class Info extends Component{
           </div>
           <hr id="infoHR"/>
           <div className="weAreDesc">
-            <p>Somos mienbros del <span>Colegio de Notarios del Estado de Hidalgo </span>
-             y del <span>Colegio Nacional del Notariado Mexicano</span></p>
+            <p>Somos miembros del <span><a href="http://www.colegiodenotarioshidalgo.org.mx/" className="extlink">Colegio de Notarios del Estado de Hidalgo </a></span>
+            y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink">Colegio Nacional del Notariado Mexicano</a></span></p>
              <img src={colegioNotarios} alt="Colegio de Notarios Logo"/>
              <img src={notariadoMexicano} alt="Notariado Mexicano Logo"/>
           </div>
