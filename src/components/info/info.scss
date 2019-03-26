@@ -91,7 +91,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  height: 60vh;
   margin-top: 20px;
   @media screen and (max-width: 620px){
     justify-content: center;
@@ -117,6 +117,13 @@
     max-width: 100%;
   }
 }
+
+.descContainer > .div-logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .descContainer > div > p {
   width: 100%;
   text-align: justify;
@@ -127,8 +134,8 @@
   font-size: 1em;
   margin: 10px 0;
 }
-.descContainer > img{
-  width: 30%;
+.descContainer > .div-logo > img{
+  width: 60%;
   margin-left: 20%;
   @media screen and (max-width: 1000px){
     margin-left: 10%;
@@ -218,7 +225,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 20px;
+  margin-top:10vh;
+  @media screen and (max-width: 664px){
+    margin-top: 5vh;
+  }
 }
 .persons > div > img{
   margin-bottom: 10px;
@@ -280,15 +290,15 @@
   color: $primary;
 }
 .weAreDesc > img{
-  width: 25%;
-  margin: 10px 10px;
+  width: 20%;
+  margin: 10px 5vw;
   @media screen and (max-width: 1100px){
-    width: 30%;
+    width: 20%;
   }
   @media screen and (max-width: 720px){
     width: 50%;
   }
   @media screen and (max-width: 600px){
-    width: 70%;
+    width: 50%;
   }
 }
