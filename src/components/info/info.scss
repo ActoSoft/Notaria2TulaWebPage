@@ -307,6 +307,20 @@
   text-decoration: none;
 }
 
+/*.extlink::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  display: block;
+  background: $primary;
+  transition: width .3s;
+}
+
+.extlink:hover::after {
+  width: 100%;
+  transition: width .3s;
+}*/
+
 .extlink:hover {
   text-decoration: underline;
 }

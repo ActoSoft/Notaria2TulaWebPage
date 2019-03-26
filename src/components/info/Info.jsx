@@ -71,7 +71,7 @@ class Info extends Component{
           <hr id="infoHR"/>
           <div className="weAreDesc">
             <p>Somos miembros del <span><a href="http://www.colegiodenotarioshidalgo.org.mx/" className="extlink">Colegio de Notarios del Estado de Hidalgo </a></span>
-             y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink">Colegio Nacional del Notariado Mexicano</a></span></p>
+            y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink">Colegio Nacional del Notariado Mexicano</a></span></p>
              <img src={colegioNotarios} alt="Colegio de Notarios Logo"/>
              <img src={notariadoMexicano} alt="Notariado Mexicano Logo"/>
           </div>
