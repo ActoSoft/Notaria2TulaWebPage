@@ -85,13 +85,16 @@
     margin-left: 0;
   }
 }
+.aboutContainer{
+  min-height: 100vh;
+  margin: 0 10vw;
+}
 .descContainer{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 60vh;
   margin-top: 20px;
   @media screen and (max-width: 620px){
     justify-content: center;
@@ -139,6 +142,8 @@
   margin-left: 20%;
   @media screen and (max-width: 1000px){
     margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
   @media screen and (max-width: 850px){
     margin-left: 5%;
@@ -160,11 +165,15 @@
     flex-direction: column;
   }
 }
-.weHaveServices > h1{
-  margin: 0;
+.weHaveServices > p{
+  margin: 0 0 -15% 0;
   text-align: center;
   width: 100%;
   color: $white;
+  font-size: 2.4em;
+  @media screen and (max-width: 720px){
+    margin: 5px 0;
+  }
   @media screen and (max-width: 600px){
     display: none;
   }
@@ -174,6 +183,7 @@
 }
 .serviceItem{
   max-width: 25%;
+  margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

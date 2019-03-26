@@ -41,7 +41,7 @@ class Info extends Component{
           </div>
         </div>
         <div className="weHaveServices">
-          <h1>Contamos con:</h1>
+          <p>Contamos con:</p>
           <div className="serviceItem">
             <img src={paper} alt="papel"/>
             <p>Una variedad de trámites para todo tipo de circunstancias legales</p>
