@@ -199,13 +199,13 @@
   @media screen and (max-width: 747px){
     max-width: 40%;
     min-width: 40%;
-    margin-left: 5%;
+    margin-left: 5% !important;
   }
   @media screen and (max-width: 644px){
     padding: 20px;
     max-width: 80%;
     min-width: 80%;
-    margin-left: 0%;
+    margin-left: 0% !important;
   }
 }
 .question > span{

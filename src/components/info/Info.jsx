@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './info.scss'
-import aboutUs from '../../static/img/About.jpg'
+import aboutUs from '../../static/img/About3.jpg'
 import logo from '../../static/assets/Logo_transparencia.png'
 import communication from '../../static/assets/Icons/communication.svg'
 import documentsSecurity from '../../static/assets/Icons/documents-security.svg'
