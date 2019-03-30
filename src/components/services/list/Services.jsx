@@ -61,7 +61,19 @@ class Services extends Component {
 
     render() {
         return (
-            <p>{this.state.dummie}</p>
+            <div className="tramites-container">
+                <div className="--sidebar">
+                    <div className="options">
+                        {this.state.data.map((category, index)=>(
+                            <p 
+                            key={index + category.categoria}
+                            onClick={this.changeActualCategory}>
+                                {category.categoria}
+                            </p>
+                        ))}
+                    </div>
+                </div>
+            </div>
         )
     }
 
