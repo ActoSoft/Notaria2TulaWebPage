@@ -23,7 +23,7 @@ class Contact extends Component {
               <div className="formPart">
                 <div id="whiteShadow" className="box"></div>
                 <div id="blueBox" className="box">
-                  <p>Déjanos un comentario, nustro personal se pondra en contacto contigo para darle seguimiento a tu caso</p>
+                  <p>Déjanos un comentario, nuestro personal se pondrá en contacto contigo para darle seguimiento a tu caso.</p>
                   <div className="formContent">
                     <div className="characteristicsClient">
                       <img src={avatar} alt="avatarIcon"/>
