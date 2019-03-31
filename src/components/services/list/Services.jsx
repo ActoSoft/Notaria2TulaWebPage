@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import aboutUs from '../../../static/assets/back1.jpeg'
 import './services.scss'
 
 class Services extends Component {
@@ -58,22 +59,44 @@ class Services extends Component {
         }
     }
 
+    changeActualCategory = (index) =>{
+      let {idcategoriaActual} = this.state
+      idcategoriaActual = index
+      this.setState({idcategoriaActual})
+    }
 
     render() {
         return (
+          <div>
+            <div id="servicesPresentation">
+              <div className="white"></div>
+              <p className="place">¿Quienes sómos?</p>
+              <img src={aboutUs} alt="Services" id="servicesImage"/>
+            </div>
             <div className="tramites-container">
                 <div className="--sidebar">
                     <div className="options">
                         {this.state.data.map((category, index)=>(
-                            <p 
+                            <p
                             key={index + category.categoria}
-                            onClick={this.changeActualCategory}>
+                            onClick={()=>{this.changeActualCategory(index)}}>
                                 {category.categoria}
                             </p>
                         ))}
                     </div>
+                    <div id="divTramitesContainer">
+                      <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
+                      {this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
+                        <div className="tramiteCard">
+                          <img src={aboutUs}/>
+                          <p>{tramite}</p>
+                        </div>
+                        //console.log(tramite.tramites[index])
+                      ))}
+                    </div>
                 </div>
             </div>
+          </div>
         )
     }
 

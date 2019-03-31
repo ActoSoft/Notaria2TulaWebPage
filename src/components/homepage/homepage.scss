@@ -495,9 +495,9 @@
 }
 
 @keyframes enter{
-  to{
+  from{
     opacity: 0;
-  }from{
+  }to{
     opacity: 1;
   }
 }

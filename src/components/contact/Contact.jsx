@@ -31,11 +31,11 @@ class Contact extends Component {
                     </div>
                     <div className="characteristicsClient">
                       <img src={envelope} alt="emailIcon"/>
-                      <input type="text" placeholder="Correo Electrónico"/>
+                      <input type="email" placeholder="Correo Electrónico"/>
                     </div>
                     <div className="characteristicsClient">
                       <img src={smartphone} alt="phoneIcon"/>
-                      <input type="text" placeholder="Teléfono de contacto"/>
+                      <input type="tel" placeholder="Teléfono de contacto"/>
                     </div>
                     <div id="contentTextArea">
                       <textarea placeholder="Cuéntanos un poco más de como podemos ayudarte" required ></textarea>
