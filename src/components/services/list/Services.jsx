@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import aboutUs from '../../../static/assets/back1.jpeg'
+import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
 import './services.scss'
 
 class Services extends Component {
@@ -77,11 +78,23 @@ class Services extends Component {
                 <div className="--sidebar">
                     <div className="options">
                         {this.state.data.map((category, index)=>(
-                            <p
-                            key={index + category.categoria}
-                            onClick={()=>{this.changeActualCategory(index)}}>
-                                {category.categoria}
-                            </p>
+                            <div className="forMobile">
+                              <p
+                              key={index + category.categoria}
+                              onClick={()=>{this.changeActualCategory(index)}}
+                              className="titleService">
+                                  {category.categoria}
+                              </p>
+                              <img src={downArrow} alt="flecha" className="downArrow"/>
+                              <div className="servicesMobile">
+                                {this.state.data[index].tramites.map((tramite)=>(
+                                  <div className="otro">
+                                    <img src={aboutUs}/>
+                                    <p>{tramite}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
                         ))}
                     </div>
                     <div id="divTramitesContainer">

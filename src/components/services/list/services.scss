@@ -1,5 +1,18 @@
 @import "../../../variables.scss";
 
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 0px;
+  background-color: #bbb;
+}
+::-webkit-scrollbar-thumb:active{
+  background-color: #999;
+  border-radius: 5px;
+}
+
 #servicesPresentation{
   width: 100%;
   height: 100vh;
@@ -67,11 +80,14 @@
 .tramites-container {
     min-height: 100vh;
     z-index: -1;
-    @media screen and (max-width: 1228px){
-      height: 105vh;
-    }
+
     @media screen and (max-width: 942px){
-      height: 135vh;
+      height: 100vh;
+    }
+    @media screen and (max-width: 600px){
+      min-height: 641px;
+      height: auto;
+
     }
     .--sidebar {
         min-width: 190px;
@@ -86,13 +102,22 @@
         justify-content: center;
         align-items: center;
         background: $primary;
-
+        @media screen and (max-width: 600px){
+          width: 100%;
+          background: $white;
+          min-height: 641px;
+        }
         .options {
             height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            @media screen and (max-width: 600px){
+              height: fit-content;
+              justify-content: space-between;
+              width: 100%;
+            }
             p {
                 margin: 0;
                 text-align: center;
@@ -109,6 +134,9 @@
 }
 
 #divTramitesContainer{
+  @media screen and (max-width: 600px){
+    display: none;
+  }
   position: absolute;
   top: 10vh;
   left: 18vw;
@@ -147,7 +175,7 @@
     margin: 15px 10% 0 10%;
   }
   .tramiteCard{
-    max-width: 200px;
+    max-width: 25%;
     max-height: 120px;
     margin: 10px;
     display: flex;
@@ -159,6 +187,11 @@
     -moz-box-shadow: 2.5px 2.5px 0 0 #0009;
     -o-box-shadow: 2.5px 2.5px 0 0 #0009;
     box-shadow: 2.5px 2.5px 0 0 #0009;
+    @media screen and (max-width: 636px){
+      p{
+        font-size: 0.9em !important;
+      }
+    }
     img{
       width: 100%;
       height: 80px;
@@ -180,6 +213,106 @@
       color: $white;
       font-size: 1em;
       font-weight: 300;
+    }
+  }
+}
+.otro{
+  display: none !important;
+
+}
+
+.forMobile{
+  img{
+    display: none;
+  }
+  @media screen and (max-width: 600px){
+    background-color: #fff;
+    width: 90%;
+    border: 0.5px solid #bbb;
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1px #0009;
+    -moz-box-shadow: 1.5px 1.5px 1.5px 1px #0009;
+    -o-box-shadow: 1.5px 1.5px 1.5px 1px #0009;
+    box-shadow: 1.5px 1.5px 1.5px 1px #0009;
+    min-height: 100px;
+    height: fit-content;
+    margin: 15px 0;
+    position: relative;
+    .titleService{
+      color: #000 !important;
+      height: 100px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      font-size: 1.3em !important;
+      margin-left: 2% !important;
+    }
+    .downArrow{
+      display: block;
+      position: absolute;
+      right: 5%;
+      top: 25px;
+      height: 50px;
+    }
+    .servicesMobile{
+      min-height: 250px;
+      max-height: 250px;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 5px 0;
+      &:-webkit-scrollbar{
+        width: 10px;
+        background-color: #eee;
+      }
+      &:-webkit-scrollbar-thumb{
+        border-radius: 0px;
+        background-color: #bbb;
+      }
+      &::-webkit-scrollbar-thumb:active{
+        background-color: #999;
+        border-radius: 5px;
+      }
+      .otro{
+        display: flex !important;
+        min-height: 120px;
+        width: 200px;
+        max-height: 120px;
+        margin: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        -webkit-box-shadow: 2.5px 2.5px 0 0 #0009;
+        -moz-box-shadow: 2.5px 2.5px 0 0 #0009;
+        -o-box-shadow: 2.5px 2.5px 0 0 #0009;
+        box-shadow: 2.5px 2.5px 0 0 #0009;
+        img{
+          display: block;
+          width: 200px;
+          height: 80px;
+          object-fit: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        p{
+          width: 100%;
+          height: 40px;
+          margin: 0;
+          text-align: center;
+          background-color: $primary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          color: $white;
+          font-size: 1em !important;
+          font-weight: 300;
+        }
+      }
     }
   }
 }
