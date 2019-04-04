@@ -3,6 +3,7 @@ import menu from '../../../static/assets/Icons/menu.png'
 import logo from '../../../static/assets/Logo_transparencia.png'
 import {ReactComponent as Close} from '../../../static/assets/Icons/close.svg'
 import './header.scss'
+import {NavLink} from 'react-router-dom'
 const HeaderMobile = (props) =>
 {
     const active = props.sidebar ? "active" : null
@@ -22,10 +23,18 @@ const HeaderMobile = (props) =>
                     onClick={props.closeSidebar} 
                     />
                 <div className="options">
-                    <p>Inicio</p>
-                    <p>Nosotros</p>
-                    <p>Trámites</p>
-                    <p>Contacto</p>
+                    <NavLink to="/" className="link" id="deleteI">
+                        <p>Inicio</p>
+                    </NavLink>
+                    <NavLink to="/nosotros/" className="link" id="deleteN">
+                        <p>Nosotros</p>
+                    </NavLink>
+                    <NavLink to="/tramites/" className="link" id="deleteT">
+                        <p>Trámites</p>
+                    </NavLink>
+                    <NavLink to="/contacto/" className="link" id="deleteC">
+                        <p>Contacto</p>
+                    </NavLink>
                 </div>
             </div>
             <div className="close" onClick={props.closeSidebar}>

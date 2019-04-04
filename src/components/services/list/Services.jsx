@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import aboutUs from '../../../static/assets/back1.jpeg'
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
+import upArrow from '../../../static/assets/Icons/up-arrow.svg'
 import './services.scss'
 
 class Services extends Component {
@@ -56,7 +57,8 @@ class Services extends Component {
                     ]
                 },
             ],
-            idcategoriaActual: 0
+            idcategoriaActual: 0,
+            activeArrow:false
         }
     }
 
@@ -66,12 +68,45 @@ class Services extends Component {
       this.setState({idcategoriaActual})
     }
 
+    activeAndSet = (numero) =>{
+      //console.log(numero);
+      let {activeArrow} = this.state
+      let {idcategoriaActual} = this.state
+      let flecha=document.getElementById("flecha"+numero);
+      //console.log(activeArrow)
+      if(idcategoriaActual===numero){
+        activeArrow=!activeArrow
+        activeArrow===true ? flecha.setAttribute("src",upArrow) : flecha.setAttribute("src",downArrow)
+      }else{
+        if(activeArrow===true){
+          this.viewCardsMobile(idcategoriaActual, !activeArrow)
+          let flechaB=document.getElementById("flecha"+idcategoriaActual);
+          flechaB.setAttribute("src",downArrow);
+        }else{
+          activeArrow=!activeArrow
+        }
+        flecha.setAttribute("src",upArrow);
+        idcategoriaActual=numero
+      }
+      this.viewCardsMobile(numero, activeArrow)
+      this.setState({idcategoriaActual,activeArrow})
+    }
+
+    viewCardsMobile = (numero, hacer) =>{
+      let actual=this.state.data[numero].categoria;
+      //console.log(actual);
+      let view=document.getElementById(actual);
+      //console.log(view);
+      //console.log(hacer)
+      hacer===true ? view.style.display="flex" : view.style.display="none"
+      return 0;
+    }
     render() {
         return (
           <div>
             <div id="servicesPresentation">
               <div className="white"></div>
-              <p className="place">¿Quienes sómos?</p>
+              <p className="place">Trámites</p>
               <img src={aboutUs} alt="Services" id="servicesImage"/>
             </div>
             <div className="tramites-container">
@@ -79,14 +114,16 @@ class Services extends Component {
                     <div className="options">
                         {this.state.data.map((category, index)=>(
                             <div className="forMobile">
+                              <div onClick={()=>{this.activeAndSet(index)}}>
                               <p
                               key={index + category.categoria}
                               onClick={()=>{this.changeActualCategory(index)}}
                               className="titleService">
                                   {category.categoria}
                               </p>
-                              <img src={downArrow} alt="flecha" className="downArrow"/>
-                              <div className="servicesMobile">
+                              <img src={downArrow} alt="flecha" className="downArrow" id={"flecha"+index}/>
+                              </div>
+                              <div className="servicesMobile" id={category.categoria}>
                                 {this.state.data[index].tramites.map((tramite)=>(
                                   <div className="otro">
                                     <img src={aboutUs}/>
