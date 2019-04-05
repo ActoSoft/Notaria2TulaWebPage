@@ -58,14 +58,42 @@ class Services extends Component {
                 },
             ],
             idcategoriaActual: 0,
-            activeArrow:false
+            activeArrow:false,
+            width: 0
         }
+    }
+    componentDidMount = () =>{
+      window.addEventListener('resize', (event) =>{
+        let {width} = this.state
+        width=window.innerWidth
+        let paint=document.getElementById("paint"+this.state.idcategoriaActual)
+        if(width>600){
+          paint.style.backgroundColor="#006"
+        }else{
+          paint.style.backgroundColor="transparent"
+        }
+        //console.log(this.state.width)
+        this.setState({width})
+      });
     }
 
     changeActualCategory = (index) =>{
       let {idcategoriaActual} = this.state
-      idcategoriaActual = index
-      this.setState({idcategoriaActual})
+      let {width}=this.state
+      width=window.innerWidth
+      let paint=document.getElementById("paint"+index)
+      if(width>600){
+        paint.style.backgroundColor="#006"
+      }else{
+        paint.style.backgroundColor="transparent"
+      }
+      if(index!=idcategoriaActual){
+        let painted=document.getElementById("paint"+idcategoriaActual)
+        painted.style.backgroundColor="transparent"
+        idcategoriaActual = index
+      }
+
+      this.setState({idcategoriaActual, width})
     }
 
     activeAndSet = (numero) =>{
@@ -113,8 +141,8 @@ class Services extends Component {
                 <div className="--sidebar">
                     <div className="options">
                         {this.state.data.map((category, index)=>(
-                            <div className="forMobile">
-                              <div onClick={()=>{this.activeAndSet(index)}}>
+                            <div className="forMobile" id={"paint"+index}>
+                              <div onClick={()=>{this.activeAndSet(index)}} className="inDesktop">
                               <p
                               key={index + category.categoria}
                               onClick={()=>{this.changeActualCategory(index)}}
@@ -134,7 +162,8 @@ class Services extends Component {
                             </div>
                         ))}
                     </div>
-                    <div id="divTramitesContainer">
+                </div>
+                <div id="divTramitesContainer">
                       <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
                       {this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
                         <div className="tramiteCard">
@@ -144,7 +173,6 @@ class Services extends Component {
                         //console.log(tramite.tramites[index])
                       ))}
                     </div>
-                </div>
             </div>
           </div>
         )
