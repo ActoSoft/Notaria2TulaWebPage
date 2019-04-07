@@ -46,18 +46,28 @@ class HomePage extends Component {
 
   goKnowUs = () => {
     let top = document.getElementById('abCont').offsetTop
-    let scrollStep = top / (1000/30)
+    //console.log(top)
+    let scrollStep = 10
     let counter = window.scrollY
+    let positionI= window.scrollY
     let scrollInterval = setInterval(
       ()=>{
         if(counter<=top){
+          //console.log(counter)
           window.scrollBy(0, scrollStep)
           counter+=scrollStep
+          //console.log(counter)
+          if(counter===top-((top-positionI)%10)){
+            scrollStep=(top-positionI)%10
+            if(scrollStep<=0){
+              scrollStep=1
+            }
+          }
         }
         else{
           clearInterval(scrollInterval)
         }
-        }, 30
+        }, 1
       )
   }
 

@@ -1,0 +1,187 @@
+@keyframes toChangeH{
+    from{
+      background-color: transparent;
+      height: 90px;
+    }to{
+      background-color: #fff;
+      height: 50px;
+    }
+  }
+  @keyframes toOriginalH{
+    from{
+      background-color: #fff;
+      height: 50px;
+    }to{
+      background-color: transparent;
+      height: 90px;
+    }
+  }
+  @keyframes changeSizeLogo{
+    from{
+      height: 80px;
+    }to{
+      height: 40px;
+    }
+  }
+  @keyframes originalSizeLogo{
+    from{
+      height: 40px;
+    }to{
+      height: 80px;
+    }
+  }
+  @keyframes toChangeNav{
+    from{
+      padding: 20px 0 0 0;
+    }to{
+      padding: 0;
+    }
+  }
+  @keyframes toOriginalNav{
+    from{
+      padding: 0;
+    }to{
+      padding: 20px 0 0 0;
+    }
+  }
+  
+  @-webkit-keyframes toChangeH{
+    from{
+      background-color: transparent;
+      height: 90px;
+    }to{
+      background-color: #fff;
+      height: 50px;
+    }
+  }
+  @-webkit-keyframes toOriginalH{
+    from{
+      background-color: #fff;
+      height: 50px;
+    }to{
+      background-color: transparent;
+      height: 90px;
+    }
+  }
+  @-webkit-keyframes changeSizeLogo{
+    from{
+      height: 80px;
+    }to{
+      height: 40px;
+    }
+  }
+  @-webkit-keyframes originalSizeLogo{
+    from{
+      height: 40px;
+    }to{
+      height: 80px;
+    }
+  }
+  @-webkit-keyframes toChangeNav{
+    from{
+      padding: 20px 0 0 0;
+    }to{
+      padding: 0;
+    }
+  }
+  @-webkit-keyframes toOriginalNav{
+    from{
+      padding: 0;
+    }to{
+      padding: 20px 0 0 0;
+    }
+  }
+  
+  @-moz-keyframes toChangeH{
+    from{
+      background-color: transparent;
+      height: 90px;
+    }to{
+      background-color: #fff;
+      height: 50px;
+    }
+  }
+  @-moz-keyframes toOriginalH{
+    from{
+      background-color: #fff;
+      height: 50px;
+    }to{
+      background-color: transparent;
+      height: 90px;
+    }
+  }
+  @-moz-keyframes changeSizeLogo{
+    from{
+      height: 80px;
+    }to{
+      height: 40px;
+    }
+  }
+  @-moz-keyframes originalSizeLogo{
+    from{
+      height: 40px;
+    }to{
+      height: 80px;
+    }
+  }
+  @-moz-keyframes toChangeNav{
+    from{
+      padding: 20px 0 0 0;
+    }to{
+      padding: 0;
+    }
+  }
+  @-moz-keyframes toOriginalNav{
+    from{
+      padding: 0;
+    }to{
+      padding: 20px 0 0 0;
+    }
+  }
+  
+  @-o-keyframes toChangeH{
+    from{
+      background-color: transparent;
+      height: 90px;
+    }to{
+      background-color: #fff;
+      height: 50px;
+    }
+  }
+  @-o-keyframes toOriginalH{
+    from{
+      background-color: #fff;
+      height: 50px;
+    }to{
+      background-color: transparent;
+      height: 90px;
+    }
+  }
+  @-o-keyframes changeSizeLogo{
+    from{
+      height: 80px;
+    }to{
+      height: 40px;
+    }
+  }
+  @-o-keyframes originalSizeLogo{
+    from{
+      height: 40px;
+    }to{
+      height: 80px;
+    }
+  }
+  @-o-keyframes toChangeNav{
+    from{
+      padding: 20px 0 0 0;
+    }to{
+      padding: 0;
+    }
+  }
+  @-o-keyframes toOriginalNav{
+    from{
+      padding: 0;
+    }to{
+      padding: 20px 0 0 0;
+    }
+  }

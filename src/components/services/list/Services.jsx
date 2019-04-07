@@ -62,19 +62,31 @@ class Services extends Component {
             width: 0
         }
     }
-    componentDidMount = () =>{
-      window.addEventListener('resize', (event) =>{
-        let {width} = this.state
-        width=window.innerWidth
-        let paint=document.getElementById("paint"+this.state.idcategoriaActual)
-        if(width>600){
-          paint.style.backgroundColor="#006"
-        }else{
-          paint.style.backgroundColor="transparent"
+    doIn = () =>{
+      let {width} = this.state
+      width=window.innerWidth
+      let paint=document.getElementById("paint"+this.state.idcategoriaActual)
+      let otros = document.getElementsByClassName("forMobile")
+      if(width>600){
+        paint.style.backgroundColor="#006"
+        for(let i=0;i<otros.length;i++){
+          otros[i].className="forMobile forDesktop"
         }
-        //console.log(this.state.width)
-        this.setState({width})
-      });
+      }else{
+        paint.style.backgroundColor="transparent"
+        for(let i=0;i<otros.length;i++){
+          otros[i].className="forMobile"
+        }
+      }
+      //console.log(this.state.width)
+      this.setState({width})
+    }
+    componentDidMount = () =>{
+      this.doIn()
+      window.addEventListener("resize", this.doIn);
+    }
+    componentWillUnmount() {
+      window.removeEventListener("resize", this.doIn);
     }
 
     changeActualCategory = (index) =>{
@@ -93,6 +105,13 @@ class Services extends Component {
         idcategoriaActual = index
       }
 
+      //let tramites = document.getElementById("divTramitesContainer")
+      //tramites.style.animation="enter 5s linear 1"
+      let parte=document.getElementsByClassName("--sidebar")[0]
+      parte.id="bluepart"
+      setTimeout(() =>{
+        parte.id="onebluepart"
+      }, 1000)
       this.setState({idcategoriaActual, width})
     }
 
@@ -138,7 +157,7 @@ class Services extends Component {
               <img src={aboutUs} alt="Services" id="servicesImage"/>
             </div>
             <div className="tramites-container">
-                <div className="--sidebar">
+                <div className="--sidebar" id="onebluepart">
                     <div className="options">
                         {this.state.data.map((category, index)=>(
                             <div className="forMobile" id={"paint"+index}>

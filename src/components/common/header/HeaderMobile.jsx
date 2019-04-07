@@ -11,7 +11,9 @@ const HeaderMobile = (props) =>
     <div className="header-mobile-container">
         <div className="header-top">
             <img src={menu} className="hamburger" alt="hamburger" onClick={props.openSidebar}/>
-            <img src={logo} className="logo" alt="logo"/>
+            <NavLink to="/" className="link">
+                <img src={logo} className="logo" alt="logo"/>
+            </NavLink>
         </div>
         <div className={"sidebar " + active}>
             <div className="content">
@@ -23,16 +25,16 @@ const HeaderMobile = (props) =>
                     onClick={props.closeSidebar} 
                     />
                 <div className="options">
-                    <NavLink to="/" className="link" id="deleteI">
+                    <NavLink to="/" className="link" id="deleteI" onClick={props.closeSidebar}>
                         <p>Inicio</p>
                     </NavLink>
-                    <NavLink to="/nosotros/" className="link" id="deleteN">
+                    <NavLink to="/nosotros/" className="link" id="deleteN" onClick={props.closeSidebar}>
                         <p>Nosotros</p>
                     </NavLink>
-                    <NavLink to="/tramites/" className="link" id="deleteT">
+                    <NavLink to="/tramites/" className="link" id="deleteT" onClick={props.closeSidebar}>
                         <p>Trámites</p>
                     </NavLink>
-                    <NavLink to="/contacto/" className="link" id="deleteC">
+                    <NavLink to="/contacto/" className="link" id="deleteC"  onClick={props.closeSidebar}>
                         <p>Contacto</p>
                     </NavLink>
                 </div>

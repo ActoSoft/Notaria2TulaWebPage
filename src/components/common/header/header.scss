@@ -1,4 +1,5 @@
 @import "../../../variables.scss";
+@import "./animations.scss";
 
 #head{
   width: 100%;
@@ -6,16 +7,43 @@
   position: absolute;
   top: 0;
   z-index: 900;
+  height: 90px;
+}
+.onChangeHeader{
+  animation: toChangeH 0.5s;
+  -webkit-animation: toChangeH 0.5s;
+  -moz-animation: toChangeH 0.5s;
+  -o-animation: toChangeH 0.5s;
+}
+.onOriginalHeader{
+  animation: toOriginalH 0.5s;
+  -webkit-animation: toOriginalH 0.5s;
+  -moz-animation: toOriginalH 0.5s;
+  -o-animation: toOriginalH 0.5s;
 }
 #headerLogo{
   position: absolute;
-  top: 20px;
-  left: 30px;
-  height: 50px;
+  top: 10px;
+  left: 10px;
+  height: 80px;
   margin: 0;
+  background-color: #fff9;
+  border-radius: 5px;
   @media screen and (max-width: 720px){
     display: none;
   }
+}
+.originalLogo{
+  animation: originalSizeLogo 0.5s;
+  -webkit-animation: originalSizeLogo 0.5s;
+  -moz-animation: originalSizeLogo 0.5s;
+  -o-animation: originalSizeLogo 0.5s;
+}
+.changeLogo{
+  animation: changeSizeLogo 0.5s;
+  -webkit-animation: changeSizeLogo 0.5s;
+  -o-animation: changeSizeLogo 0.5s;
+  -moz-animation: changeSizeLogo 0.5s;
 }
 #navbar{
   width: 50%;
@@ -32,16 +60,27 @@
     width: 80%;
   }
 }
+.changeNav{
+  animation: toChangeNav 0.5s;
+  -webkit-animation: toChangeNav 0.5s;
+  -moz-animation: toChangeNav 0.5s;
+  -o-animation: toChangeNav 0.5s;
+}
+.originalNav{
+  animation: toOriginalNav 0.5s;
+  -webkit-animation: toOriginalNav 0.5s;
+  -moz-animation: toOriginalNav 0.5s;
+  -o-animation: toOriginalNav 0.5s;
+}
 hr{
   height: 50%;
   border: 1px solid $black;
 }
 .itemNav{
-  font-size: 1.2em;
-  font-family: 'Arial', sans-serif;
+  font-size: 1.4em;
   color: $black;
   transition-duration: 0.5s ease;
-  font-weight: 600;
+  font-weight: 900;
   @media screen and (max-width: 410px){
     font-size: 0.9em;
   }
@@ -51,6 +90,12 @@ hr{
 }
 .link{
   text-decoration: none;
+  @media screen and (max-width: 600px){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .header-mobile-container {
@@ -119,8 +164,8 @@ hr{
   opacity: 0;
   transition: 0.5s ease-in-out;
   -webkit-transition: 0.5s ease-in-out;
-
   .content {
+    min-height: 190px;
     width: 75%;
     background-color: $white;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
@@ -141,6 +186,15 @@ hr{
       position: absolute;
       top: 0;
       left: calc(25 - 10px);
+      @media screen and (max-height: 420px){
+        width: 40%;
+      }
+      @media screen and (max-height: 370px){
+        width: 30%;
+      }
+      @media screen and (max-height: 240px){
+        width: 20%;
+      }
     }
 
     .options {
@@ -155,13 +209,13 @@ hr{
       p {
         text-align: center;
         background-color: $white;
-        font-size: 2em;
+        font-size: 1.5em;
         color: $primary;
         padding: 3vh 0;
         font-weight: 600;
         letter-spacing: 10px;
         margin: 2vh 0;
-        //width: 100%;
+        width: 70%;
         border-bottom: 1px solid $primary;
         //box-shadow: 0px 5px 15px rgba($color: $primary, $alpha: 0.25);
         //margin: 0;
@@ -179,3 +233,4 @@ hr{
   opacity: 1;
   left:0;
 }
+
