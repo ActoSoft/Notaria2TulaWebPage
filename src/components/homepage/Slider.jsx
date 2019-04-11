@@ -7,9 +7,7 @@ const Slider = (props) => (
         <button id="btnConocenos" onClick={props.goKnowUs}>Conócenos</button>
         {
             props.actualImage ?
-            <img src={props.actualImage} alt="cover" id="imgC" style={{
-              'animation':'enter 2s'
-            }}/>
+            <img src={props.actualImage} alt="cover" id="imgC" className="otherImage"/>
             : null
         }
 

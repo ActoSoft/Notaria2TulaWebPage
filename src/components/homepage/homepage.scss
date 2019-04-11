@@ -19,13 +19,53 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  animation: 1.5s enter;
+  /*animation: 1.5s enter;
   -webkit-animation: 1.5s enter;
   -moz-animation: 1.5s enter;
-  -o-animation: 1.5s enter;
+  -o-animation: 1.5s enter;*/
   @media screen and (max-width: 600px) {
     height: 90vh;
   }
+}
+.oneImage{
+  animation: otherEnter 2s;
+  -webkit-animation: otherEnter 2s;
+  -moz-animation: otherEnter 2s;
+  -o-animation: otherEnter 2s;
+  @keyframes otherEnter{
+    from{
+      opacity: 0;
+    }to{
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes otherEnter{
+    from{
+      opacity: 0;
+    }to{
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes otherEnter{
+    from{
+      opacity: 0;
+    }to{
+      opacity: 1;
+    }
+  }
+  @-o-keyframes otherEnter{
+    from{
+      opacity: 0;
+    }to{
+      opacity: 1;
+    }
+  }
+}
+.otherImage{
+  animation: enter 2s;
+  -webkit-animation: enter 2s ;
+  -moz-animation: enter 2s;
+  -o-animation: enter 2s;
 }
 .white{
   grid-column: 1/4;
@@ -496,6 +536,27 @@
 }
 
 @keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-moz-keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-o-keyframes enter{
   from{
     opacity: 0;
   }to{

@@ -7,7 +7,16 @@
   position: absolute;
   top: 0;
   z-index: 900;
-  height: 90px;
+  height: 13vh;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 720px){
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 600px){
+    display: none !important;
+  }
 }
 .onChangeHeader{
   animation: toChangeH 0.5s;
@@ -22,55 +31,30 @@
   -o-animation: toOriginalH 0.5s;
 }
 #headerLogo{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  height: 80px;
-  margin: 0;
-  background-color: #fff9;
-  border-radius: 5px;
+  height: 12vh;
+  margin: 0 0 0 1vw;
   @media screen and (max-width: 720px){
     display: none;
   }
 }
 .originalLogo{
-  animation: originalSizeLogo 0.5s;
-  -webkit-animation: originalSizeLogo 0.5s;
-  -moz-animation: originalSizeLogo 0.5s;
-  -o-animation: originalSizeLogo 0.5s;
-}
-.changeLogo{
-  animation: changeSizeLogo 0.5s;
-  -webkit-animation: changeSizeLogo 0.5s;
-  -o-animation: changeSizeLogo 0.5s;
-  -moz-animation: changeSizeLogo 0.5s;
+  animation: originalSizeLogo 1s;
+  -webkit-animation: originalSizeLogo 1s;
+  -moz-animation: originalSizeLogo 1s;
+  -o-animation: originalSizeLogo 1s;
 }
 #navbar{
   width: 50%;
-  margin: 0 0 0 45%;
-  height: 50px;
-  padding: 20px 0 0 0;
+  margin: 0 5vw 0 0;
+  height: 6.5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
   z-index: 900;
   @media screen and (max-width: 720px){
-    margin: 0 0 0 10%;
     width: 80%;
   }
-}
-.changeNav{
-  animation: toChangeNav 0.5s;
-  -webkit-animation: toChangeNav 0.5s;
-  -moz-animation: toChangeNav 0.5s;
-  -o-animation: toChangeNav 0.5s;
-}
-.originalNav{
-  animation: toOriginalNav 0.5s;
-  -webkit-animation: toOriginalNav 0.5s;
-  -moz-animation: toOriginalNav 0.5s;
-  -o-animation: toOriginalNav 0.5s;
 }
 hr{
   height: 50%;

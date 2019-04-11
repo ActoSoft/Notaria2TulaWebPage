@@ -65,14 +65,17 @@ class Services extends Component {
     doIn = () =>{
       let {width} = this.state
       width=window.innerWidth
+      let under=document.getElementsByClassName("titleService")[this.state.idcategoriaActual]
       let paint=document.getElementById("paint"+this.state.idcategoriaActual)
       let otros = document.getElementsByClassName("forMobile")
       if(width>600){
+        under.style.textDecoration="underline"
         paint.style.backgroundColor="#006"
         for(let i=0;i<otros.length;i++){
           otros[i].className="forMobile forDesktop"
         }
       }else{
+        under.style.textDecoration=""
         paint.style.backgroundColor="transparent"
         for(let i=0;i<otros.length;i++){
           otros[i].className="forMobile"
@@ -93,13 +96,18 @@ class Services extends Component {
       let {idcategoriaActual} = this.state
       let {width}=this.state
       width=window.innerWidth
+      let under=document.getElementsByClassName("titleService")[index]
       let paint=document.getElementById("paint"+index)
       if(width>600){
         paint.style.backgroundColor="#006"
+        under.style.textDecoration="underline"
       }else{
         paint.style.backgroundColor="transparent"
+        under.style.textDecoration="none"
       }
       if(index!=idcategoriaActual){
+        let under=document.getElementsByClassName("titleService")[idcategoriaActual]
+        under.style.textDecoration=""
         let painted=document.getElementById("paint"+idcategoriaActual)
         painted.style.backgroundColor="transparent"
         idcategoriaActual = index
@@ -124,15 +132,19 @@ class Services extends Component {
       if(idcategoriaActual===numero){
         activeArrow=!activeArrow
         activeArrow===true ? flecha.setAttribute("src",upArrow) : flecha.setAttribute("src",downArrow)
+        activeArrow===true ? flecha.className="downArrow arrowOpen" : flecha.className="downArrow arrowClose"
+
       }else{
         if(activeArrow===true){
           this.viewCardsMobile(idcategoriaActual, !activeArrow)
           let flechaB=document.getElementById("flecha"+idcategoriaActual);
           flechaB.setAttribute("src",downArrow);
+          flechaB.className="downArrow arrowClose"
         }else{
           activeArrow=!activeArrow
         }
         flecha.setAttribute("src",upArrow);
+        flecha.className="downArrow arrowOpen"
         idcategoriaActual=numero
       }
       this.viewCardsMobile(numero, activeArrow)
@@ -145,7 +157,10 @@ class Services extends Component {
       let view=document.getElementById(actual);
       //console.log(view);
       //console.log(hacer)
-      hacer===true ? view.style.display="flex" : view.style.display="none"
+      hacer===true ? view.style.display="flex" : setTimeout(()=>{
+        view.style.display="none"
+      }, 500)
+      hacer===true ? view.className="servicesMobile mobileOpenServices" : view.className="servicesMobile mobileCloseServices"
       return 0;
     }
     render() {

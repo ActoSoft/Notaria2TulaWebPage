@@ -21,7 +21,8 @@ class HomePage extends Component {
         ],
         cont: 0,
         interval: null,
-        actualImage: null
+        actualImage: null, 
+        classChange: false
       }
   }
 
@@ -38,10 +39,15 @@ class HomePage extends Component {
   }
 
   change = () =>{
+    let image=document.getElementById("imgC")
     let { cont } = this.state
+    let { classChange } = this.state
     cont++
     if(cont > 2) cont = 0
-    this.setState({cont, actualImage: this.state.urls[cont]});
+    //console.log(cont%2)
+    classChange===false ? image.className="oneImage" : image.className="otherImage"
+    classChange=!classChange
+    this.setState({cont, actualImage: this.state.urls[cont], classChange});
   }
 
   goKnowUs = () => {

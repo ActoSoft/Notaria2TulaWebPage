@@ -146,9 +146,15 @@
 
 #bluepart:not(:active) ~ #divTramitesContainer{
   animation: enter 0.5s;
+  -webkit-animation: enter 0.5s;
+  -moz-animation: enter 0.5s;
+  -o-animation: enter 0.5s;
 }
 .forDesktop:not(:active){
   animation: change 0.5s;
+  -webkit-animation: change 0.5s;
+  -moz-animation: change 0.5s;
+  -o-animation: change 0.5s;
 }
 .inDesktop{
   width: 100%;
@@ -260,7 +266,158 @@
   display: none !important;
 
 }
-
+.arrowClose{
+  animation: toBottomAnimate 0.3s;
+  -webkit-animation: toBottomAnimate 0.3s;
+  -moz-animation: toBottomAnimate 0.3s;
+  -o-animation: toBottomAnimate 0.3s;
+  @keyframes toBottomAnimate {
+    from{
+      transform: rotate(180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-webkit-keyframes toBottomAnimate {
+    from{
+      transform: rotate(180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-moz-keyframes toBottomAnimate {
+    from{
+      transform: rotate(180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-o-keyframes toBottomAnimate {
+    from{
+      transform: rotate(180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+}
+.arrowOpen{
+  animation: toTopAnimate 0.3s;
+  -webkit-animation: toTopAnimate 0.3s;
+  -moz-animation: toTopAnimate 0.3s;
+  -o-animation: toTopAnimate 0.3s;
+  @keyframes toTopAnimate {
+    from{
+      transform: rotate(-180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-webkit-keyframes toTopAnimate {
+    from{
+      transform: rotate(-180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-moz-keyframes toTopAnimate {
+    from{
+      transform: rotate(-180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+  @-o-keyframes toTopAnimate {
+    from{
+      transform: rotate(-180deg);
+    }to{
+      transform: rotate(0deg);
+    }
+  }
+}
+.mobileOpenServices{
+  animation: openAnimate 0.5s;
+  -webkit-animation: openAnimate 0.5s;
+  -moz-animation: openAnimate 0.5s;
+  -o-animation: openAnimate 0.5s;
+  @keyframes openAnimate {
+    from{
+      min-height: 0;
+      max-height: 0;
+    }to{
+      min-height: 250px;
+      max-height: 250px;
+    }
+  }
+  @-webkit-keyframes openAnimate {
+    from{
+      min-height: 0;
+      max-height: 0;
+    }to{
+      min-height: 250px;
+      max-height: 250px;
+    }
+  }
+  @-moz-keyframes openAnimate {
+    from{
+      min-height: 0;
+      max-height: 0;
+    }to{
+      min-height: 250px;
+      max-height: 250px;
+    }
+  }
+  @-o-keyframes openAnimate {
+    from{
+      min-height: 0;
+      max-height: 0;
+    }to{
+      min-height: 250px;
+      max-height: 250px;
+    }
+  }
+}
+.mobileCloseServices{
+  animation: closeAnimate 0.5s;
+  -webkit-animation: closeAnimate 0.5s;
+  -moz-animation: closeAnimate 0.5s;
+  -o-animation: closeAnimate 0.5s;
+  @keyframes closeAnimate {
+    from{
+      min-height: 250px;
+      max-height: 250px;
+    }to{
+      min-height: 0;
+      max-height: 0;
+    }
+  }
+  @-webkit-keyframes closeAnimate {
+    from{
+      min-height: 250px;
+      max-height: 250px;
+    }to{
+      min-height: 0;
+      max-height: 0;
+    }
+  }
+  @-moz-keyframes closeAnimate {
+    from{
+      min-height: 250px;
+      max-height: 250px;
+    }to{
+      min-height: 0;
+      max-height: 0;
+    }
+  }
+  @-o-keyframes closeAnimate {
+    from{
+      min-height: 250px;
+      max-height: 250px;
+    }to{
+      min-height: 0;
+      max-height: 0;
+    }
+  }
+}
 .forMobile{
   img{
     display: none;
@@ -379,6 +536,51 @@
   }
 }
 @keyframes change{
+  from{
+    background-color: $primary;
+  }to{
+    background-color: #006;
+  }
+}
+
+@-webkit-keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes change{
+  from{
+    background-color: $primary;
+  }to{
+    background-color: #006;
+  }
+}
+
+@-moz-keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-moz-keyframes change{
+  from{
+    background-color: $primary;
+  }to{
+    background-color: #006;
+  }
+}
+
+@-o-keyframes enter{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@-o-keyframes change{
   from{
     background-color: $primary;
   }to{

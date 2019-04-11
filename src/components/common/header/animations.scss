@@ -1,187 +1,103 @@
 @keyframes toChangeH{
-    from{
-      background-color: transparent;
-      height: 13vh;
-    }to{
-      background-color: #fff;
-      height: 10vh;
-    }
+  from{
+    top: -10vh;
+  }to{
+    top: 0vh;
   }
-  @keyframes toOriginalH{
-    from{
-      background-color: #fff;
-      height: 10vh;
-    }to{
-      background-color: transparent;
-      height: 13vh;
-    }
+}
+@keyframes toOriginalH{
+  from{
+    top: 100vh;
+    opacity: 1;
+    background-color: #fff;
+  }to{
+    top: 70vh;
+    opacity: 0;
+    background-color: transparent;
   }
-  @keyframes changeSizeLogo{
-    from{
-      height: 80px;
-    }to{
-      height: 40px;
-    }
+}
+@keyframes originalSizeLogo{
+  from{
+    height: 9vh;
+  }to{
+    height: 12vh;
   }
-  @keyframes originalSizeLogo{
-    from{
-      height: 40px;
-    }to{
-      height: 80px;
-    }
+}
+//Part of webkit
+@-webkit-keyframes toChangeH{
+  from{
+    top: -10vh;
+  }to{
+    top: 0vh;
   }
-  @keyframes toChangeNav{
-    from{
-      padding: 20px 0 0 0;
-    }to{
-      padding: 0;
-    }
+}
+@-webkit-keyframes toOriginalH{
+  from{
+    top: 100vh;
+    opacity: 1;
+    background-color: #fff;
+  }to{
+    top: 70vh;
+    opacity: 0;
+    background-color: transparent;
   }
-  @keyframes toOriginalNav{
-    from{
-      padding: 0;
-    }to{
-      padding: 20px 0 0 0;
-    }
+}
+@-webkit-keyframes originalSizeLogo{
+  from{
+    height: 9vh;
+  }to{
+    height: 12vh;
   }
-  
-  @-webkit-keyframes toChangeH{
-    from{
-      background-color: transparent;
-      height: 10vh;
-    }to{
-      background-color: #fff;
-      height: 13vh;
-    }
+}
+//Part of mozila
+@-moz-keyframes toChangeH{
+  from{
+    top: -10vh;
+  }to{
+    top: 0vh;
   }
-  @-webkit-keyframes toOriginalH{
-    from{
-      background-color: #fff;
-      height: 13vh;
-    }to{
-      background-color: transparent;
-      height: 10vh;
-    }
+}
+@-moz-keyframes toOriginalH{
+  from{
+    top: 100vh;
+    opacity: 1;
+    background-color: #fff;
+  }to{
+    top: 70vh;
+    opacity: 0;
+    background-color: transparent;
   }
-  @-webkit-keyframes changeSizeLogo{
-    from{
-      height: 80px;
-    }to{
-      height: 40px;
-    }
+}
+@-moz-keyframes originalSizeLogo{
+  from{
+    height: 9vh;
+  }to{
+    height: 12vh;
   }
-  @-webkit-keyframes originalSizeLogo{
-    from{
-      height: 40px;
-    }to{
-      height: 80px;
-    }
+}
+//Part of opera
+@-o-keyframes toChangeH{
+  from{
+    top: -10vh;
+  }to{
+    top: 0vh;
   }
-  @-webkit-keyframes toChangeNav{
-    from{
-      padding: 20px 0 0 0;
-    }to{
-      padding: 0;
-    }
+}
+@-o-keyframes toOriginalH{
+  from{
+    top: 100vh;
+    opacity: 1;
+    background-color: #fff;
+  }to{
+    top: 70vh;
+    opacity: 0;
+    background-color: transparent;
   }
-  @-webkit-keyframes toOriginalNav{
-    from{
-      padding: 0;
-    }to{
-      padding: 20px 0 0 0;
-    }
+}
+@-o-keyframes originalSizeLogo{
+  from{
+    height: 9vh;
+  }to{
+    height: 12vh;
   }
-  
-  @-moz-keyframes toChangeH{
-    from{
-      background-color: transparent;
-      height: 13vh;
-    }to{
-      background-color: #fff;
-      height: 10vh;
-    }
-  }
-  @-moz-keyframes toOriginalH{
-    from{
-      background-color: #fff;
-      height: 10vh;
-    }to{
-      background-color: transparent;
-      height: 13vh;
-    }
-  }
-  @-moz-keyframes changeSizeLogo{
-    from{
-      height: 80px;
-    }to{
-      height: 40px;
-    }
-  }
-  @-moz-keyframes originalSizeLogo{
-    from{
-      height: 40px;
-    }to{
-      height: 80px;
-    }
-  }
-  @-moz-keyframes toChangeNav{
-    from{
-      padding: 20px 0 0 0;
-    }to{
-      padding: 0;
-    }
-  }
-  @-moz-keyframes toOriginalNav{
-    from{
-      padding: 0;
-    }to{
-      padding: 20px 0 0 0;
-    }
-  }
-  
-  @-o-keyframes toChangeH{
-    from{
-      background-color: transparent;
-      height: 13vh;
-    }to{
-      background-color: #fff;
-      height: 10vh;
-    }
-  }
-  @-o-keyframes toOriginalH{
-    from{
-      background-color: #fff;
-      height: 10vh;
-    }to{
-      background-color: transparent;
-      height: 13vh;
-    }
-  }
-  @-o-keyframes changeSizeLogo{
-    from{
-      height: 80px;
-    }to{
-      height: 40px;
-    }
-  }
-  @-o-keyframes originalSizeLogo{
-    from{
-      height: 40px;
-    }to{
-      height: 80px;
-    }
-  }
-  @-o-keyframes toChangeNav{
-    from{
-      padding: 20px 0 0 0;
-    }to{
-      padding: 0;
-    }
-  }
-  @-o-keyframes toOriginalNav{
-    from{
-      padding: 0;
-    }to{
-      padding: 20px 0 0 0;
-    }
-  }
+}

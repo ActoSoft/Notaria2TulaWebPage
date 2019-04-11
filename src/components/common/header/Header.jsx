@@ -19,16 +19,13 @@ class Header extends Component{
     if(y>height){
       header.className="onChangeHeader"
       logo.className="changeLogo"
-      nav.className="changeNav"
 
       header.style.position="fixed"
       header.style.backgroundColor="#fff"
       header.style.height="10vh"
       header.style.webkitBoxShadow="0 0 3px rgb(0,0,0,0.21)"
 
-      logo.style.height="40px"
-
-      nav.style.padding="0"
+      logo.style.height="9vh"
 
       /*for(let i=0;i<options.length;i++){
         options[i].style.color="#fff"
@@ -36,16 +33,13 @@ class Header extends Component{
     }else{
       header.className="onOriginalHeader"
       logo.className="originalLogo"
-      nav.className="originalNav"
 
       header.style.position="absolute"
       header.style.backgroundColor="transparent"
-      header.style.height="10vh"
+      header.style.height="13vh"
       header.style.webkitBoxShadow="none"
 
-      logo.style.height="80px"
-
-      nav.style.padding="20px 0 0 0"
+      logo.style.height="12vh"
 
       /*for(let i=0;i<options.length;i++){
         options[i].style.color="#000"
