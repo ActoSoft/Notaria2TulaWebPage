@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import aboutUs from '../../../static/assets/back1.jpeg'
+import tramitesCover from '../../../static/img/TramitesBack.jpg'
+import tramitesBack from '../../../static/img/CardsTramites.jpg'
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
 import upArrow from '../../../static/assets/Icons/up-arrow.svg'
 import './services.scss'
@@ -169,7 +170,7 @@ class Services extends Component {
             <div id="servicesPresentation">
               <div className="white"></div>
               <p className="place">Trámites</p>
-              <img src={aboutUs} alt="Services" id="servicesImage"/>
+              <img src={tramitesCover} alt="Services" id="servicesImage"/>
             </div>
             <div className="tramites-container">
                 <div className="--sidebar" id="onebluepart">
@@ -188,7 +189,7 @@ class Services extends Component {
                               <div className="servicesMobile" id={category.categoria}>
                                 {this.state.data[index].tramites.map((tramite)=>(
                                   <div className="otro">
-                                    <img src={aboutUs}/>
+                                    <img src={tramitesBack}/>
                                     <p>{tramite}</p>
                                   </div>
                                 ))}
@@ -201,7 +202,7 @@ class Services extends Component {
                       <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
                       {this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
                         <div className="tramiteCard">
-                          <img src={aboutUs}/>
+                          <img src={tramitesBack}/>
                           <p>{tramite}</p>
                         </div>
                         //console.log(tramite.tramites[index])
