@@ -3,6 +3,7 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/common/header/Header'
 import Footer from './components/common/footer/Footer'
+import BottomButon from './components/common/bottomButon/BottomButon'
 
 import HomePage from './components/homepage/HomePage'
 import HeaderMobile from './components/common/header/HeaderMobile'
@@ -21,6 +22,28 @@ class App extends Component {
     }
   }
 
+  fixedButon = () =>{
+    let component = document.getElementById("fixedButon")
+    let scroll = window.scrollY
+
+    if(scroll>=10){
+      component.className="seeFixedButon"
+      component.style.display="block"
+    }else{
+      component.className="notSeeFixedButton"
+      setTimeout(()=>{
+        component.style.display="none"
+      }, 300)
+    }
+  }
+
+  componentDidMount = () =>{
+    window.addEventListener("scroll", this.fixedButon)
+  }
+  componentWillUnmount = ()=>{
+    window.removeEventListener("scroll", this.fixedButon)
+  }
+
   openSidebar = () => {
     console.log("llego")
     this.setState({sidebarActive: true})
@@ -31,7 +54,28 @@ class App extends Component {
   }
 
   up = () =>{
-    window.scrollBy(0,0)
+    //window.scrollTo(0,0)
+    let top = 0
+    let scrollStep = 15
+    let counter = window.scrollY
+    let positionI= window.scrollY
+    let scrollInterval = setInterval(()=>{
+      if(counter>top){
+        //console.log(counter)
+        window.scrollBy(0, -scrollStep)
+        counter-=scrollStep
+        //console.log(counter)
+        if(counter===top+(positionI%15)){
+          scrollStep=positionI%15
+          if(scrollStep<=0){
+            scrollStep=1
+          }
+        }
+      }
+      else{
+        clearInterval(scrollInterval)
+      }
+    }, 1)
   }
 
   render() {
@@ -54,6 +98,9 @@ class App extends Component {
         </Switch>
 
         <Footer />
+        <BottomButon
+          up={this.up}
+        />
       </div>
     );
   }

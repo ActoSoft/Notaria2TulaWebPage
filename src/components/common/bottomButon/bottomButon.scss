@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+#fixedButon{
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
+    background: $primary;
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    opacity: .5;
+    display: none;
+    img{
+        transform: rotate(90deg);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.seeFixedButon{
+    animation: seeButon 0.3s;
+    @keyframes seeButon{
+        from{
+            transform: scale(0);
+        }to{
+            transform: scale(1);
+        }
+    }
+}
+.notSeeFixedButton{
+    animation: notSeeButon 0.3s;
+    @keyframes notSeeButon{
+        from{
+            transform: scale(1);
+        }to{
+            transform: scale(0);
+        }
+    }
+}
