@@ -71,6 +71,7 @@ class HomePage extends Component {
             ]
           },
         ],
+        actualServiceMobile:0,
         globalOption:0,
         minOp:0,
         maxOp:2,
@@ -140,10 +141,11 @@ class HomePage extends Component {
 
     let key
     if(contador%2===0)
-      key="@keyframes anim {from{position:absolute;left: "+(leftSelect-10)+"px; top: "+(topSelect-10)+"px;background-color: #504d4d; -webkit-box-shadow: 0 0 10px 0px #0007;}\
+      key="@keyframes anim {from{position:absolute;left: "+(leftSelect-10)+"px; top: "+(topSelect-10)+"px;background-color: #403c3c; -webkit-box-shadow: 0 0 10px 0px #0007;}\
       to{position:absolute;left: "+((widthUtil.width/2)-position.width/2-10)+"px;top: "+(topSelect-10)+"px;background-color: #fffc; -webkit-box-shadow: 0 0 10px 0.5px #0007;}}"
     else{
-      key="@keyframes anim {from{position:absolute;left: "+((widthUtil.width/2)-position.width/2-10)+"px; top: "+(topSelect-10)+"px;}to{position:absolute;left: "+(leftSelect-10)+"px;top: "+(topSelect-10)+"px;}}"
+      key="@keyframes anim {from{transform:scale(1.1);position:absolute;left: "+((widthUtil.width/2)-position.width/2-10)+"px; top: "+(topSelect-10)+"px;background-color: #fffc; -webkit-box-shadow: 0 0 10px 0.5px #0007;}\
+      to{transform:scale(1);position:absolute;left: "+(leftSelect-10)+"px;top: "+(topSelect-10)+"px;background-color: #403c3c; -webkit-box-shadow: 0 0 10px 0px #0007;}}"
     }
     document.styleSheets[0].insertRule(key);
     if(contador%2===0){
@@ -151,6 +153,7 @@ class HomePage extends Component {
         pSelect.className="serviceTitle titleSelectStart"
         pSelect.style.color="#000"
         select.style.backgroundColor="#fffc"
+        select.style.transform="scale(1.1)"
         select.style.boxShadow="0 0 10px 0.5px #0007"
         select.className="service other"
         let uno=document.getElementsByClassName("other")[0]
@@ -180,8 +183,9 @@ class HomePage extends Component {
     }else{
         pSelect.className="serviceTitle titleSelectEnd"
         pSelect.style.color="#ebedfa"
-        select.style.backgroundColor="#504d4d"
+        select.style.backgroundColor="#403c3c"
         select.style.boxShadow="0 0 10px 0px #0007"
+        select.style.transform=""
         select.className="service other"
         let uno=document.getElementsByClassName("other")[0]
         uno.style.animation="anim 0.5s"
@@ -663,6 +667,14 @@ class HomePage extends Component {
     this.setState({minOp,maxOp})
   }
 
+  updateMobile = (direction) => {
+    let {actualServiceMobile} = this.state
+
+    direction ? actualServiceMobile++ : actualServiceMobile--
+
+    this.setState({actualServiceMobile})
+  }
+
   toResize = () =>{
 
     let {only}=this.state
@@ -764,6 +776,8 @@ class HomePage extends Component {
           moveTop={this.moveTop}
           minOp={this.state.minOp}
           maxOp={this.state.maxOp}
+          actual={this.state.actualServiceMobile}
+          up={this.updateMobile}
         />
         
         <InfoAbout />

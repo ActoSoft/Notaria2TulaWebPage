@@ -277,14 +277,14 @@
 #viewProcedures{
   min-height: 100vh;
   position: relative;
-  background: url("../../static/img/procedures-desktop.jpg") center/cover, #fff4;
-  background-blend-mode: lighten;
+  background: url("../../static/img/procedures-desktop.jpg") center/cover, #bbb9;
   //display: flex;
+  background-blend-mode: lighten;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 600px){
-    background: url("../../static/img/procedures-mobile.jpg") center/cover, #fff4;
+    background: url("../../static/img/procedures-mobile.jpg") center/cover, #bbb9;
   }
   #titleProcedures{
     font-size: 2em;
@@ -294,6 +294,9 @@
     font-weight: 600;
   }
   .proceduresContainer{
+    @media screen and (max-width: 720px){
+      display: none;
+    }
     margin: 5% 0 0 0;
     /*background-color: #fffb;*/
     width: 80%;
@@ -309,7 +312,7 @@
       min-width: 140px;
       min-height: 140px;
       width: 11vw;
-      background-color: #504d4d;
+      background-color: #403c3c;
       -webkit-box-shadow: 0 0 10px 0.5px #0007;
       height: 11vw;
       margin: 10px;
@@ -317,6 +320,14 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
+
+      transition-duration: 0.1s; 
+
+      &:hover{
+        @media screen and (min-width: 720px){
+          transform: scale(1.1);
+        }
+      }
 
       .serviceTitle{
         margin: 0 10%;
@@ -523,6 +534,83 @@
   } 
 }
 
+.proceduresMobile{
+  @media screen and (min-width: 721px){
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 20% 0 calc(20% - 10px);
+  background: #fff8;
+  border-radius: 10px;
+  padding: 10px;
+  .serviceMobile{
+    min-width: 100px;
+    min-height: 100px;
+    width: 35vw;
+    height: 35vw;
+    background-color: #403c3c;
+    -webkit-box-shadow: 0 0 10px 0.5px #0007;
+    margin-bottom:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    p{
+      margin: 0 10%;
+      width: fit-content;
+      color: #ebedfa;
+      text-align: center;
+      font-size: 1.4em;
+    }
+  }
+  .arrowContainerMobile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+    img{
+      border-radius: 50%;
+      width: 7vw;
+      background: #403c3c;
+      padding: 5px;
+    }
+  }
+  .borderDivMobile{
+    width: 100%;
+    border: 1px solid #000;
+    padding: 3px;
+    max-height: 23vh;
+    min-height: 23vh;
+  }
+  .servicesContainerMobile{
+    width: 100%;
+    max-height: 23vh;
+    min-height: 23vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    p{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4em;
+      font-weight: 900;
+      margin: 5px 0;
+      width: fit-content;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+
 //Service Part End
 #partOneIC{
   display: flex;
@@ -539,9 +627,9 @@
     border-radius: 10px;
     margin-top: 5vh;
     border: 0;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 720px) {
       width: 100%;
-      margin-bottom: 5vh
+      margin-bottom: 5vh;
     }
   }
 }

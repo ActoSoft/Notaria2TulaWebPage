@@ -1,14 +1,30 @@
 import React from 'react'
 import sandClock from '../../static/assets/Icons/sand-clock.png'
 import money from '../../static/assets/Icons/money (2).png'
-import donate from '../../static/assets/Icons/donate.png'
 import leftArrow from '../../static/assets/Icons/left-arrow.png'
 import rightArrow from '../../static/assets/Icons/right-arrow.png'
-import plus from '../../static/assets/Icons/plus.png'
+import leftMobile from '../../static/assets/Icons/left-arrow.svg'
+import rightMobile from '../../static/assets/Icons/right-arrow.svg'
 
 const Procedures = (props) => (
     <div id="viewProcedures">
         <p id="titleProcedures">Trámites que realizamos</p>
+        <div className="proceduresMobile">
+            <div className="serviceMobile">
+                <p>{props.data[props.actual].categoria}</p>
+            </div>
+            <div className="arrowContainerMobile">
+                {props.actual>0 ? <img src={leftMobile} onClick={()=>{props.up(false)}}/> : null }
+                {props.actual<4 ? <img src={rightMobile} onClick={()=>{props.up(true)}}/> : null }
+            </div>
+            <div className="borderDivMobile">
+                <div className="servicesContainerMobile">
+                    {props.data[props.actual].tramites.map((tramite,index)=>(
+                        <p>{tramite}</p>
+                    ))}
+                </div>
+            </div>
+        </div>
         <div className="proceduresContainer">
             <div className="arrowTopContainer">
                 <img className="arrowsTop" src={leftArrow} onClick={()=>{props.moveTop(false)}}  style={{display : props.minOp<=0 ? 'none' : 'block'}}/>
