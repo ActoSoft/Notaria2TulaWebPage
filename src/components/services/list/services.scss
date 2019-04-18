@@ -418,6 +418,11 @@
     }
   }
 }
+#Testamento{
+  @media screen and (max-width: 600px){
+    justify-content: center;
+  }
+} 
 .forMobile{
   img{
     display: none;
@@ -432,7 +437,7 @@
     box-shadow: 1.5px 1.5px 1.5px 1px #0009;
     min-height: 100px;
     height: fit-content;
-    margin: 15px 0;
+    margin: 10px 0;
     position: relative;
     border-radius: 10px;
     display: flex;

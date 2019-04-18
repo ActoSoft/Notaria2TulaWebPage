@@ -81,9 +81,25 @@ hr{
     align-items: center;
   }
 }
+#specialNavLogo{
+  @media screen and (max-width: 600px){
+    width: fit-content;
+  }
+}
 
 .header-mobile-container {
   display: none;
+}
+
+#anError{
+  display: none;
+  z-index: -100;
+  background: $white;
+  min-height: 10vh;
+  @media screen and (max-width: 600px){
+    position: fixed;
+    display: block;
+  }
 }
 
 //HEADER MOBILE STYLES
@@ -122,6 +138,7 @@ hr{
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1000;
 
   .hamburger {
     width: 5vw;

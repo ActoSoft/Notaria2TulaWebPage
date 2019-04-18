@@ -11,7 +11,7 @@ const HeaderMobile = (props) =>
     <div className="header-mobile-container">
         <div className="header-top">
             <img src={menu} className="hamburger" alt="hamburger" onClick={props.openSidebar}/>
-            <NavLink to="/" className="link">
+            <NavLink to="/" className="link" id="specialNavLogo">
                 <img src={logo} className="logo" alt="logo"/>
             </NavLink>
         </div>

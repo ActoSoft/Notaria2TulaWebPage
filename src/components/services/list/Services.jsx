@@ -86,6 +86,7 @@ class Services extends Component {
       this.setState({width})
     }
     componentDidMount = () =>{
+      window.scrollTo(0,0)
       this.doIn()
       window.addEventListener("resize", this.doIn);
     }
@@ -161,7 +162,12 @@ class Services extends Component {
       hacer===true ? view.style.display="flex" : setTimeout(()=>{
         view.style.display="none"
       }, 500)
+      let width=window.innerWidth
+      if(width<600)
       hacer===true ? view.className="servicesMobile mobileOpenServices" : view.className="servicesMobile mobileCloseServices"
+      else{
+        view.className="servicesMobile"
+      }
       return 0;
     }
     render() {

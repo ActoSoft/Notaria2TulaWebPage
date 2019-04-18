@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 const About = (props) => (
     <div className="aboutContainer" id="abCont">
         <p className="fullPlace">Notaria Pública #2 del Distrito Judicial de Tula
@@ -13,7 +14,9 @@ const About = (props) => (
             />
         <div className="question">
             <span>¿Tienes algún problema legal?</span>
-            <button>Trámites disponibles</button>
+            <NavLink to="/tramites/" className="link">
+                <button>Trámites disponibles</button>
+            </NavLink>
         </div>
         </div>
     </div>

@@ -10,40 +10,73 @@ class Header extends Component{
   }
 
   changePosition = () =>{
-    let height=window.innerHeight;
-    let y=window.scrollY
-    let header=document.getElementById("head")
-    let logo=document.getElementById("headerLogo")
-    let nav=document.getElementById("navbar")
-    //let options=document.getElementsByClassName("itemNav")
-    if(y>height){
-      header.className="onChangeHeader"
-      logo.className="changeLogo"
+    let width = window.innerWidth
+    if(width>600){
+      let height=window.innerHeight;
+      let y=window.scrollY
+      let header=document.getElementById("head")
+      let logo=document.getElementById("headerLogo")
+      //let options=document.getElementsByClassName("itemNav")
+      if(y>height){
+        header.className="onChangeHeader"
+        logo.className="changeLogo"
 
-      header.style.position="fixed"
-      header.style.backgroundColor="#fff"
-      header.style.height="10vh"
-      header.style.webkitBoxShadow="0 0 3px rgb(0,0,0,0.21)"
+        header.style.position="fixed"
+        header.style.backgroundColor="#fff"
+        header.style.height="10vh"
+        header.style.webkitBoxShadow="0 0 3px rgb(0,0,0,0.21)"
 
-      logo.style.height="9vh"
+        logo.style.height="9vh"
 
-      /*for(let i=0;i<options.length;i++){
-        options[i].style.color="#fff"
-      }*/
+        /*for(let i=0;i<options.length;i++){
+          options[i].style.color="#fff"
+        }*/
+      }else{
+        header.className="onOriginalHeader"
+        logo.className="originalLogo"
+
+        header.style.position="absolute"
+        header.style.backgroundColor="transparent"
+        header.style.height="13vh"
+        header.style.webkitBoxShadow="none"
+
+        logo.style.height="12vh"
+
+        /*for(let i=0;i<options.length;i++){
+          options[i].style.color="#000"
+        }*/
+      }
     }else{
-      header.className="onOriginalHeader"
-      logo.className="originalLogo"
+      let height=window.innerHeight;
+      let y=window.scrollY
+      let header=document.getElementsByClassName("header-top")[0]
+      let error=document.getElementById("anError")
+      //console.log(header)
+      //let options=document.getElementsByClassName("itemNav")
+      if(y>height){
+        header.className="header-top onChangeHeader"
 
-      header.style.position="absolute"
-      header.style.backgroundColor="transparent"
-      header.style.height="13vh"
-      header.style.webkitBoxShadow="none"
+        header.style.position="fixed"
+        header.style.top="0"
+        header.style.webkitBoxShadow="0 0 3px rgb(0,0,0,0.21)"
 
-      logo.style.height="12vh"
+        error.style.position="static"
 
-      /*for(let i=0;i<options.length;i++){
-        options[i].style.color="#000"
-      }*/
+        /*for(let i=0;i<options.length;i++){
+          options[i].style.color="#fff"
+        }*/
+      }else{
+        header.className="header-top onOriginalHeader"
+        header.style.position="relative"
+        header.style.top=""
+        header.style.webkitBoxShadow=""
+
+        error.style.position="fixed"
+
+        /*for(let i=0;i<options.length;i++){
+          options[i].style.color="#000"
+        }*/
+      }
     }
   }
 

@@ -276,7 +276,7 @@
 }
 #infoHR{
   border: 1px solid $primary;
-  width: 96vw;
+  width: calc(100vw - 10px);
   margin-left: -20vw;
   @media screen and (min-width: 600px){
     display: none;

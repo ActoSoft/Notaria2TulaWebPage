@@ -30,10 +30,15 @@ class App extends Component {
     this.setState({sidebarActive: false})
   }
 
+  up = () =>{
+    window.scrollBy(0,0)
+  }
+
   render() {
     return (
       <div>
         <Header />
+        <div id="anError"></div>
         <HeaderMobile 
           sidebar={this.state.sidebarActive}
           openSidebar={this.openSidebar}

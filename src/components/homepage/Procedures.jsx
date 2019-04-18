@@ -8,39 +8,29 @@ import plus from '../../static/assets/Icons/plus.png'
 
 const Procedures = (props) => (
     <div id="viewProcedures">
-        <span>Trámites que realizamos</span>
-        <div id="procedureContainer">
-        <div>
-            <p id="firstProcedure">Trámites de propiedad / bienes inmuebles <img src={plus} alt="plus"/></p>
-            <div class="optionsProcedures">
-            <img src={leftArrow} alt="left"/>
-            <div id="procedureJL">
-                <p>Jornada Laboral</p>
-                <img src={sandClock} alt="reloj de arena"/>
+        <p id="titleProcedures">Trámites que realizamos</p>
+        <div className="proceduresContainer">
+            <div className="arrowTopContainer">
+                <img className="arrowsTop" src={leftArrow} onClick={()=>{props.moveTop(false)}}  style={{display : props.minOp<=0 ? 'none' : 'block'}}/>
             </div>
-            <div id="procedureCV">
-                <p>Compra Venta</p>
-                <img src={money} alt="dinero"/>
-            </div>
-            <div id="procedureD">
-                <p>Donación</p>
-                <img src={donate} alt="donación"/>
-            </div>
-            <img src={rightArrow} alt="left"/>
+            {props.data.map((tramite, index)=>(
+                <div className="service" onClick={()=>{props.openService(index)}} id={"blackService"+index}>
+                    <p className="serviceTitle">{tramite.categoria}</p>
+                </div>
+            ))}
+            <div className="arrowTopContainer">
+                <img className="arrowsTop" src={rightArrow} onClick={()=>{props.moveTop(true)}} style={{display: props.maxOp>=4 ? "none" : "block"}}/>
             </div>
         </div>
-        <div>
-            <p>Suceciones  <img src={plus} alt="plus"/></p>
-        </div>
-        <div>
-            <p>Constitucion de sociedades <img src={plus} alt="plus"/></p>
-        </div>
-        <div>
-            <p>Testamentos <img src={plus} alt="plus"/></p>
-        </div>
-        <div>
-            <p id="lastProcedure">Trámites diversos <img src={plus} alt="plus"/></p>
-        </div>
+        <div className="otherContainerOp">
+            <div className="arrowContainer">
+                <img className="arrows" src={leftArrow} onClick={()=>{props.move(false)}} />
+            </div>
+            <div className="op">
+            </div>
+            <div className="arrowContainer">
+                <img className="arrows" src={rightArrow} onClick={()=>{props.move(true)}} />
+            </div>
         </div>
     </div>
 )
