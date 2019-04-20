@@ -177,6 +177,9 @@
   margin: 10px;
   color: $white !important;
   text-decoration: none !important;
+  @media screen and (max-width: 805px){
+    max-width: 35%;
+  }
 }
 .sendMessageContactMobile{
   min-height: 120px;
@@ -185,6 +188,11 @@
   margin: 10px;
   color: $white !important;
   text-decoration: none !important;
+  display: none;
+
+  @media screen and (max-width: 600px){
+    display: block;
+  }
 }
 #divTramitesContainer{
   @media screen and (max-width: 600px){
@@ -243,9 +251,6 @@
     -moz-box-shadow: 2.5px 2.5px 0 0 #0009;
     -o-box-shadow: 2.5px 2.5px 0 0 #0009;
     box-shadow: 2.5px 2.5px 0 0 #0009;
-    @media screen and (max-width: 805px){
-      max-width: 35%;
-    }
     @media screen and (max-width: 636px){
       p{
         font-size: 0.9em !important;
