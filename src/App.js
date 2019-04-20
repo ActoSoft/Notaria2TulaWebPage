@@ -3,7 +3,7 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/common/header/Header'
 import Footer from './components/common/footer/Footer'
-import BottomButon from './components/common/bottomButon/BottomButon'
+import BottomButon from './components/common/bottomButton/BottomButton'
 
 import HomePage from './components/homepage/HomePage'
 import HeaderMobile from './components/common/header/HeaderMobile'

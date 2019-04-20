@@ -60,7 +60,8 @@ class Services extends Component {
             ],
             idcategoriaActual: 0,
             activeArrow:false,
-            width: 0
+            width: 0,
+            partOneMessage: "Me gustaria realizar "
         }
     }
     doIn = () =>{

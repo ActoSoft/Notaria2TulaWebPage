@@ -1,10 +1,10 @@
 import React from 'react'
-import './bottomButon.scss'
+import './bottomButton.scss'
 import upArrow from '../../../static/assets/Icons/left-arrow.svg'
-const BottomButon = (props) =>(
+const BottomButton = (props) =>(
     <div id="fixedButon">
         <img src={upArrow} onClick={()=>{props.up()}}/>
     </div>
 )
 
-export default BottomButon
+export default BottomButton
