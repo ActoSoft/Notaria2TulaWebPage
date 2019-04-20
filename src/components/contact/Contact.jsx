@@ -42,7 +42,7 @@ class Contact extends Component {
                       <input type="tel" placeholder="Teléfono de contacto"/>
                     </div>
                     <div id="contentTextArea">
-                      <textarea placeholder="Cuéntanos un poco más de como podemos ayudarte" required >{this.props.message ? this.props.message : null}</textarea>
+                      <textarea placeholder="Cuéntanos un poco más de como podemos ayudarte" required >{this.props.location.aboutProps ? this.props.location.aboutProps.message : null}</textarea>
                     </div>
                   </div>
                   <button>enviar</button>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom'
 import tramitesCover from '../../../static/img/TramitesBack.jpg'
 import tramitesBack from '../../../static/img/CardsTramites.jpg'
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
@@ -61,8 +62,13 @@ class Services extends Component {
             idcategoriaActual: 0,
             activeArrow:false,
             width: 0,
-            partOneMessage: "Me gustaria realizar "
+            message: "Me gustaria realizar un trámite de "
         }
+    }
+    changeMessage = (idcategoriaActual) =>{
+      let {message} = this.state
+      message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" con ustedes"
+      this.setState({message})
     }
     doIn = () =>{
       let {width} = this.state
@@ -87,6 +93,7 @@ class Services extends Component {
       this.setState({width})
     }
     componentDidMount = () =>{
+      this.changeMessage(this.state.idcategoriaActual)
       window.scrollTo(0,0)
       this.doIn()
       window.addEventListener("resize", this.doIn);
@@ -123,6 +130,7 @@ class Services extends Component {
       setTimeout(() =>{
         parte.id="onebluepart"
       }, 1000)
+      this.changeMessage(idcategoriaActual)
       this.setState({idcategoriaActual, width})
     }
 
@@ -195,10 +203,17 @@ class Services extends Component {
                               </div>
                               <div className="servicesMobile" id={category.categoria}>
                                 {this.state.data[index].tramites.map((tramite)=>(
-                                  <div className="otro">
-                                    <img src={tramitesBack}/>
-                                    <p>{tramite}</p>
-                                  </div>
+                                  <NavLink to={{
+                                    pathname:'/contacto/',
+                                    aboutProps:{
+                                      message:this.state.message
+                                    }
+                                  }} className="sendMessageContactMobile">
+                                    <div className="otro">
+                                      <img src={tramitesBack}/>
+                                      <p>{tramite}</p>
+                                    </div>
+                                  </NavLink>
                                 ))}
                               </div>
                             </div>
@@ -208,10 +223,17 @@ class Services extends Component {
                 <div id="divTramitesContainer">
                       <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
                       {this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
-                        <div className="tramiteCard">
-                          <img src={tramitesBack}/>
-                          <p>{tramite}</p>
-                        </div>
+                        <NavLink to={{
+                          pathname:'/contacto/',
+                          aboutProps:{
+                            message:this.state.message
+                          }
+                        }} className="sendMessageContact">
+                          <div className="tramiteCard" >
+                            <img src={tramitesBack}/>
+                            <p>{tramite}</p>
+                          </div>
+                        </NavLink>
                         //console.log(tramite.tramites[index])
                       ))}
                     </div>
