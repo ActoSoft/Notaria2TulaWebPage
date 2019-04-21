@@ -104,7 +104,7 @@ class HomePage extends Component {
     let {activeNav} = this.state
     console.log(text)
     let id = window.innerWidth<=720 ? this.state.actualServiceMobile : this.state.globalOption
-    this.changeMessage(0, text).then(
+    this.changeMessage(id, text).then(
       ()=>{
         let {message} = this.state
         activeNav = true
@@ -707,12 +707,46 @@ class HomePage extends Component {
 
   updateMobile = (direction) => {
     let {actualServiceMobile} = this.state
+    let containerSCM = document.getElementsByClassName("servicesContainerMobile")[0]
+    let container = document.getElementsByClassName("containerServiceMobile")[0]
 
     direction ? actualServiceMobile++ : actualServiceMobile--
 
+    let newChild = document.createElement("div")
+    newChild.className="serviceMobile"
+    let newP = document.createElement("p")
+    let newText = document.createTextNode(this.state.data[actualServiceMobile].categoria)
+    newP.appendChild(newText)
+    newChild.appendChild(newP)
+    if(direction){
+      container.appendChild(newChild)
+      container.firstChild.className="serviceMobile mobileOriginalTrue"
+      container.lastChild.className="serviceMobile mobileNewTrue"
+      containerSCM.className="servicesContainerMobile changeServicesCM"
+      setTimeout(()=>{
+        container.firstChild.className="serviceMobile"
+        container.lastChild.className="serviceMobile"
+        containerSCM.className="servicesContainerMobile"
+        container.removeChild(container.lastChild)
+      }, 500)
+    }else{
+      container.prepend(newChild)
+      container.firstChild.className="serviceMobile mobileNewFalse"
+      container.lastChild.className="serviceMobile mobileOriginalFalse"
+      containerSCM.className="servicesContainerMobile changeServicesCM"
+      setTimeout(()=>{
+        container.firstChild.className="serviceMobile"
+        container.lastChild.className="serviceMobile"
+        containerSCM.className="servicesContainerMobile"
+        container.removeChild(container.firstChild)
+      }, 500)
+    }
+
     this.changeMessage(actualServiceMobile)
 
-    this.setState({actualServiceMobile})
+    setTimeout(()=>{
+      this.setState({actualServiceMobile})
+    }, 250)
   }
 
   toResize = () =>{

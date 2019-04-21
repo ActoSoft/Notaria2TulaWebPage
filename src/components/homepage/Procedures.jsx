@@ -11,8 +11,10 @@ const Procedures = (props) => (
     <div id="viewProcedures">
         <p id="titleProcedures">Trámites que realizamos</p>
         <div className="proceduresMobile">
-            <div className="serviceMobile">
-                <p>{props.data[props.actual].categoria}</p>
+            <div className="containerServiceMobile">
+                <div className="serviceMobile">
+                    <p>{props.data[props.actual].categoria}</p>
+                </div>
             </div>
             <div className="arrowContainerMobile">
                 {props.actual>0 ? <img src={leftMobile} onClick={()=>{props.up(false)}}/> : null }
