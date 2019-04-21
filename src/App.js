@@ -13,12 +13,15 @@ import Contact from './components/contact/Contact'
 import Service from './components/services/detail/Service'
 
 import NotFound from './components/common/not_found/NotFound'
+
+import Loader from 'react-loader-spinner'
 class App extends Component {
 
   constructor(props) {
     super(props) 
     this.state = {
-      sidebarActive: false
+      sidebarActive: false,
+      isLoaded: false
     }
   }
 
@@ -37,8 +40,11 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () =>{
+  componentDidMount =() =>{
     window.addEventListener("scroll", this.fixedButon)
+    setTimeout(()=>
+    this.setState({isLoaded: true})
+    , 3000)
   }
   componentWillUnmount = ()=>{
     window.removeEventListener("scroll", this.fixedButon)
@@ -81,12 +87,15 @@ class App extends Component {
   render() {
     return (
       <div>
+        {this.state.isLoaded ?
+        <div>
         <Header />
         <div id="anError"></div>
         <HeaderMobile 
           sidebar={this.state.sidebarActive}
           openSidebar={this.openSidebar}
           closeSidebar={this.closeSidebar}
+          isLoaded={this.state.isLoaded}
           />
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -101,6 +110,18 @@ class App extends Component {
         <BottomButon
           up={this.up}
         />
+        </div>
+        : 
+          <div className="loader">
+          <Loader 
+            type="Watch"
+            color="#006BC7"
+            height="200"
+            width="200"
+            
+          />
+          </div>
+        }
       </div>
     );
   }
