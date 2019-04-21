@@ -278,7 +278,7 @@
   cursor: pointer;
 }
 .navlinkMobile{
-  width: 100%;
+  width: 80%;
   text-decoration: none;
   color: #000;
 }
@@ -556,7 +556,7 @@
   align-items: center;
   width: 60%;
   margin: 0 20% 0 calc(20% - 10px);
-  background: #fff8;
+  background: transparent;
   border-radius: 10px;
   padding: 10px;
   .containerServiceMobile{
@@ -677,13 +677,12 @@
     img{
       border-radius: 50%;
       width: 7vw;
-      background: #403c3c;
       padding: 5px;
     }
   }
   .borderDivMobile{
     width: 100%;
-    border: 1px solid #000;
+    //border: 1px solid #000;
     padding: 3px;
     max-height: 23vh;
     min-height: 23vh;
@@ -700,6 +699,19 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    &::-webkit-scrollbar{
+      width: 10px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      //background-image: linear-gradient(to right, transparent 40%, #000 50%, transparent 60%);
+      background: #fff;
+      //border: 0.5px solid #000;
+    }
+    &::-webkit-scrollbar-track{
+      background-image: linear-gradient(to right, transparent 40%, #000 41%, #000 59%, transparent 60%);
+    }
     p{
       text-align: center;
       display: flex;
@@ -718,6 +730,9 @@
         font-size: 1.1em;
       }
     }
+  }
+  .navlinkMobile:last-child p{
+    border-bottom: none;
   }
   .changeServicesCM{
     animation: changeSCM 0.5s;
