@@ -13,7 +13,7 @@ class Contact extends Component {
     }
 
     componentDidMount = () =>{
-      window.scrollTo(0,0)
+      this.props.location.aboutProps ? window.scrollTo(0,window.innerHeight) : window.scrollTo(0,0)
     }
 
     render() {
@@ -42,7 +42,7 @@ class Contact extends Component {
                       <input type="tel" placeholder="Teléfono de contacto"/>
                     </div>
                     <div id="contentTextArea">
-                      <textarea placeholder="Cuéntanos un poco más de como podemos ayudarte" required >{this.props.location.aboutProps ? this.props.location.aboutProps.message : null}</textarea>
+                      <textarea placeholder="Cuéntanos un poco más de como podemos ayudarte" required >{this.props.location.aboutProps ? this.props.location.aboutProps.message : ""}</textarea>
                     </div>
                   </div>
                   <button>enviar</button>

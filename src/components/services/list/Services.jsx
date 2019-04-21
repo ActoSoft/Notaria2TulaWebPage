@@ -67,7 +67,7 @@ class Services extends Component {
     }
     changeMessage = (idcategoriaActual) =>{
       let {message} = this.state
-      message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" con ustedes"
+      message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" haciendo "
       this.setState({message})
     }
     doIn = () =>{
@@ -206,7 +206,7 @@ class Services extends Component {
                                   <NavLink to={{
                                     pathname:'/contacto/',
                                     aboutProps:{
-                                      message:this.state.message
+                                      message:`${this.state.message} ${tramite} con ustedes`
                                     }
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
@@ -226,7 +226,7 @@ class Services extends Component {
                         <NavLink to={{
                           pathname:'/contacto/',
                           aboutProps:{
-                            message:this.state.message
+                            message:`${this.state.message} ${tramite} con ustedes`
                           }
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >

@@ -274,7 +274,14 @@
   }
 }
 //Service Part Start
-
+.optionService{
+  cursor: pointer;
+}
+.navlinkMobile{
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+}
 #viewProcedures{
   min-height: 100vh;
   position: relative;
@@ -372,6 +379,11 @@
       }
     }
   }
+  .navlinkOp{
+    color: #000 !important;
+    width: 80%;
+    cursor: auto;
+  }
   .op{
     background-color: transparent;
     display: flex;
@@ -379,7 +391,7 @@
     align-items: center;
     position: relative;
     height: 100px;
-    width: 80%;
+    width: 100%;
   }
   .optionService{
     font-size: 1.5em;

@@ -71,6 +71,7 @@ class HomePage extends Component {
             ]
           },
         ],
+        activeNav:false,
         actualServiceMobile:0,
         globalOption:0,
         minOp:0,
@@ -83,13 +84,46 @@ class HomePage extends Component {
         previusOption:null,
         only:null,
         displays:[],
+        message: "Me gustaria realizar un trámite de ",
       }
+  }
+  changeMessage = (idcategoriaActual, text) =>{
+    let {message} = this.state
+    message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" haciendo "+text
+    this.setState({message})
+    return new Promise((resolve, reject) => {
+      if(message === "Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" haciendo "+text) {
+          resolve(true)
+      } else {
+          reject(false)
+      }
+  })
+  }
+
+  activeNL = (text)=>{
+    let {activeNav} = this.state
+    console.log(text)
+    let id = window.innerWidth<=720 ? this.state.actualServiceMobile : this.state.globalOption
+    this.changeMessage(0, text).then(
+      ()=>{
+        let {message} = this.state
+        activeNav = true
+        this.setState({activeNav})
+        console.log(message)
+      }
+    ).catch(
+      ()=>{
+        console.log("error  !!")
+      }
+    )
   }
 
   openService = (index) =>{
     let {contador}=this.state
     let {leftSelect} = this.state
     let {globalOption} = this.state
+
+    this.changeMessage(index, "")
 
     let all=document.getElementsByClassName('service')
     let select = document.getElementsByClassName('service')[index]
@@ -264,6 +298,7 @@ class HomePage extends Component {
     if(this.state.data[globalOption].tramites.length>=3){
       for(let i=0;i<3;i++){
         newSpan = document.createElement("span");
+        newSpan.addEventListener("click", ()=>{this.activeNL(this.state.data[globalOption].tramites[i]+" con ustedes")})
         newSpan.setAttribute("class","optionService");
         text=document.createTextNode(this.state.data[globalOption].tramites[i]);
         newSpan.appendChild(text);
@@ -272,6 +307,7 @@ class HomePage extends Component {
     }else{
       for(let i=0;i<this.state.data[globalOption].tramites.length;i++){
         newSpan = document.createElement("span");
+        newSpan.addEventListener("click", ()=>{this.activeNL(this.state.data[globalOption].tramites[i]+" con ustedes")})
         newSpan.setAttribute("class","optionService");
         text=document.createTextNode(this.state.data[globalOption].tramites[i]);
         newSpan.appendChild(text);
@@ -328,6 +364,7 @@ class HomePage extends Component {
 
     if(direction){
       let newOption = document.createElement("span")
+      newOption.addEventListener("click", ()=>{this.activeNL(`${this.state.data[globalOption].tramites[nextOption-1]} con ustedes`)})
       newOption.setAttribute("class","optionService")
       let content = document.createTextNode(this.state.data[globalOption].tramites[nextOption])
       newOption.appendChild(content)
@@ -402,6 +439,7 @@ class HomePage extends Component {
       }
     }else{
       let newOption = document.createElement("span")
+      newOption.addEventListener("click", ()=>{this.activeNL(this.state.data[globalOption].tramites[previusOption+1]+" con ustedes")})
       newOption.setAttribute("class","optionService")
       let content = document.createTextNode(this.state.data[globalOption].tramites[previusOption])
       newOption.appendChild(content)
@@ -672,6 +710,8 @@ class HomePage extends Component {
 
     direction ? actualServiceMobile++ : actualServiceMobile--
 
+    this.changeMessage(actualServiceMobile)
+
     this.setState({actualServiceMobile})
   }
 
@@ -699,12 +739,19 @@ class HomePage extends Component {
       only=false
     }
 
+    if(width<=720){
+      this.changeMessage(this.state.actualServiceMobile, "")
+    }
+
     this.setState({only,minOp,maxOp})
   }
 
   componentDidMount = () =>{
     window.scrollTo(0,0)
     let { interval } = this.state;
+    if(window.innerWidth<=720){
+      this.changeMessage(this.state.actualServiceMobile, "")
+    }
     interval = window.setInterval(this.change, 5000);
     window.addEventListener("resize", this.toResize)
     this.setState({ interval, actualImage: this.state.urls[0] });
@@ -778,6 +825,9 @@ class HomePage extends Component {
           maxOp={this.state.maxOp}
           actual={this.state.actualServiceMobile}
           up={this.updateMobile}
+          activeNav={this.state.activeNav}
+          message={this.state.message}
+          activeNL={this.activeNL}
         />
         
         <InfoAbout />

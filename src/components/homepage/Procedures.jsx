@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import sandClock from '../../static/assets/Icons/sand-clock.png'
 import money from '../../static/assets/Icons/money (2).png'
 import leftArrow from '../../static/assets/Icons/left-arrow.png'
@@ -20,7 +21,14 @@ const Procedures = (props) => (
             <div className="borderDivMobile">
                 <div className="servicesContainerMobile">
                     {props.data[props.actual].tramites.map((tramite,index)=>(
-                        <p>{tramite}</p>
+                        <NavLink to={{
+                            pathname:'/contacto/',
+                            aboutProps:{
+                                message:`${props.message} ${tramite} con ustedes`
+                            }
+                        }} className="navlinkMobile">
+                            <p>{tramite}</p>
+                        </NavLink>
                     ))}
                 </div>
             </div>
@@ -42,8 +50,19 @@ const Procedures = (props) => (
             <div className="arrowContainer">
                 <img className="arrows" src={leftArrow} onClick={()=>{props.move(false)}} />
             </div>
-            <div className="op">
-            </div>
+            <NavLink to={props.activeNav  ? 
+                {
+                    pathname:'/contacto/',
+                    aboutProps:{
+                        message:props.message
+                    }
+                }
+                :
+                ""
+            } className="navlinkOp">
+                <div className="op">
+                </div>
+            </NavLink>
             <div className="arrowContainer">
                 <img className="arrows" src={rightArrow} onClick={()=>{props.move(true)}} />
             </div>
