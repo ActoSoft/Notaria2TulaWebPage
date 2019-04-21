@@ -10,7 +10,7 @@ const HeaderMobile = (props) =>
     return (
     <div className="header-mobile-container">
         <div className="header-top">
-            <img src={menu} className="hamburger" alt="hamburger" onClick={props.openSidebar}/>
+            <img src={menu} className="hamburger" alt="hamburger" onClick={props.openSidebar} style={{display: props.isLoaded ? "block": "none"}}/>
             <NavLink to="/" className="link" id="specialNavLogo">
                 <img src={logo} className="logo" alt="logo"/>
             </NavLink>
@@ -21,7 +21,8 @@ const HeaderMobile = (props) =>
                     alt="logo" 
                     className="logo-sidebar"
                     />
-                <Close className="close-icon"
+                <Close className={"close-icon"}
+                    style={{display: props.isLoaded ? "block" : "none"}}
                     onClick={props.closeSidebar} 
                     />
                 <div className="options">

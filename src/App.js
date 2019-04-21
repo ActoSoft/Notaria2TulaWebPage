@@ -18,7 +18,8 @@ class App extends Component {
   constructor(props) {
     super(props) 
     this.state = {
-      sidebarActive: false
+      sidebarActive: false,
+      isLoaded: false
     }
   }
 
@@ -37,8 +38,11 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () =>{
+  componentDidMount =() =>{
     window.addEventListener("scroll", this.fixedButon)
+    setTimeout(()=>
+    this.setState({isLoaded: true})
+    , 2000)
   }
   componentWillUnmount = ()=>{
     window.removeEventListener("scroll", this.fixedButon)
@@ -87,6 +91,7 @@ class App extends Component {
           sidebar={this.state.sidebarActive}
           openSidebar={this.openSidebar}
           closeSidebar={this.closeSidebar}
+          isLoaded={this.state.isLoaded}
           />
         <Switch>
           <Route exact path="/" component={HomePage} />
