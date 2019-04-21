@@ -343,8 +343,8 @@
         color: #ebedfa;
         text-align: center;
         font-size: 1.2em;
-        @media screen and (max-width: 880px){
-          font-size: 1.1em;
+        @media screen and (max-width: 1030px){
+          font-size: 1em;
         }
       }
     }
@@ -653,6 +653,18 @@
       color: #ebedfa;
       text-align: center;
       font-size: 1.4em;
+      @media screen and (max-width: 500px){
+        font-size: 1.3em;
+      }
+      @media screen and (max-width: 435px){
+        font-size: 1.2em;
+      }
+      @media screen and (max-width: 400px){
+        font-size: 1em;
+      }
+      @media screen and (max-width: 370px){
+        font-size: 0.9em;
+      } 
     }
   }
   .arrowContainerMobile{
@@ -699,6 +711,12 @@
       width: fit-content;
       width: 100%;
       border-bottom: 1px solid #000;
+      @media screen and (max-width: 500px){
+        font-size: 1.2em;
+      }
+      @media screen and (max-width: 435px){
+        font-size: 1.1em;
+      }
     }
   }
   .changeServicesCM{
