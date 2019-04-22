@@ -62,14 +62,14 @@ class Services extends Component {
             idcategoriaActual: 0,
             activeArrow:false,
             width: 0,
-            message: "Me gustaria realizar un trámite de "
+            message: "Hola. Deseo obtener información acerca del trámite"
         }
     }
-    changeMessage = (idcategoriaActual) =>{
+    /*changeMessage = (idcategoriaActual) =>{
       let {message} = this.state
       message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" haciendo "
       this.setState({message})
-    }
+    }*/
     doIn = () =>{
       let {width} = this.state
       width=window.innerWidth
@@ -93,7 +93,7 @@ class Services extends Component {
       this.setState({width})
     }
     componentDidMount = () =>{
-      this.changeMessage(this.state.idcategoriaActual)
+      //this.changeMessage(this.state.idcategoriaActual)
       window.scrollTo(0,0)
       this.doIn()
       window.addEventListener("resize", this.doIn);
@@ -130,7 +130,7 @@ class Services extends Component {
       setTimeout(() =>{
         parte.id="onebluepart"
       }, 1000)
-      this.changeMessage(idcategoriaActual)
+      //this.changeMessage(idcategoriaActual)
       this.setState({idcategoriaActual, width})
     }
 
@@ -206,7 +206,7 @@ class Services extends Component {
                                   <NavLink to={{
                                     pathname:'/contacto/',
                                     aboutProps:{
-                                      message:`${this.state.message} ${tramite} con ustedes`
+                                      message:`${this.state.message} ${tramite}, ya que me gustaría realizarlo con ustedes`
                                     }
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
@@ -226,7 +226,7 @@ class Services extends Component {
                         <NavLink to={{
                           pathname:'/contacto/',
                           aboutProps:{
-                            message:`${this.state.message} ${tramite} con ustedes`
+                            message:`${this.state.message} ${tramite}, ya que me gustaría realizarlo con ustedes`
                           }
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
