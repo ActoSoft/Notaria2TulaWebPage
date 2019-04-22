@@ -2,7 +2,6 @@
   "name": "notaria-webpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://actosoft.github.io/Notaria2TulaWebPage/",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@sendgrid/mail": "^6.3.1",
