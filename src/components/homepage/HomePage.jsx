@@ -757,6 +757,11 @@ class HomePage extends Component {
 
     let width=window.innerWidth
     let options = document.getElementsByClassName("service")
+
+    if(this.state.contador%2!=0){
+      this.openService(this.state.globalOption)
+    }
+
     if(width>1009){
       for(let i=0;i<options.length;i++){
         options[i].style.display="flex"
