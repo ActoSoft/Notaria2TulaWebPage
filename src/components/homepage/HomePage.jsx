@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-multi-str */
 import React, { Component } from 'react'
 import './homepage.scss'
 import back1 from '../../static/img/Back1.jpg'
@@ -166,7 +168,6 @@ class HomePage extends Component {
       }
     }
 
-    let size=select.width
     let position = select.getBoundingClientRect();
     if(contador%2===0){
       leftSelect = select.offsetLeft
@@ -358,8 +359,8 @@ class HomePage extends Component {
       animationsKeyFrames[3]="@keyframes animationFour{from{left:"+leftPosition[2]+"px;width:30%;opacity:1;}to{left:100%;width:0%;opacity:0;}}"
     }
 
-    animationsKeyFrames.map((animation)=>{
-      document.styleSheets[0].insertRule(animation);
+    animationsKeyFrames.map((animation) => {
+      document.styleSheets[0].insertRule(animation)
     })
 
     if(direction){
@@ -540,8 +541,6 @@ class HomePage extends Component {
     let left = [3]
     let top
     let animation = [4]
-
-    let ids=["blackService0","blackService1","blackService2","blackService3","blackService4"]
 
     container.style.position="relative"
     container.style.justifyContent="space-between"
@@ -758,7 +757,7 @@ class HomePage extends Component {
     let width=window.innerWidth
     let options = document.getElementsByClassName("service")
 
-    if(this.state.contador%2!=0){
+    if(this.state.contador%2!==0){
       this.openService(this.state.globalOption)
     }
 

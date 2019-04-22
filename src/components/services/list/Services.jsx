@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import tramitesCover from '../../../static/img/TramitesBack.jpg'
 import tramitesBack from '../../../static/img/CardsTramites.jpg'
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
@@ -65,119 +65,102 @@ class Services extends Component {
             message: "Hola. Deseo obtener información acerca del trámite"
         }
     }
-    /*changeMessage = (idcategoriaActual) =>{
-      let {message} = this.state
-      message="Me gustaria realizar un trámite de "+this.state.data[idcategoriaActual].categoria+" haciendo "
-      this.setState({message})
-    }*/
-    doIn = () =>{
-      let {width} = this.state
-      width=window.innerWidth
-      let under=document.getElementsByClassName("titleService")[this.state.idcategoriaActual]
-      let paint=document.getElementById("paint"+this.state.idcategoriaActual)
+
+    doIn = () => {
+      let { width } = this.state
+      width = window.innerWidth
+      let under = document.getElementsByClassName("titleService")[this.state.idcategoriaActual]
+      let paint = document.getElementById("paint"+this.state.idcategoriaActual)
       let otros = document.getElementsByClassName("forMobile")
-      if(width>600){
-        under.style.textDecoration="underline"
-        paint.style.backgroundColor="#006"
-        for(let i=0;i<otros.length;i++){
-          otros[i].className="forMobile forDesktop"
+      if(width > 600) {
+        under.style.textDecoration = "underline"
+        paint.style.backgroundColor = "#006"
+        for(let i=0; i<otros.length; i++){
+          otros[i].className = "forMobile forDesktop"
         }
-      }else{
-        under.style.textDecoration=""
-        paint.style.backgroundColor="transparent"
-        for(let i=0;i<otros.length;i++){
-          otros[i].className="forMobile"
+      } else {
+        under.style.textDecoration = ""
+        paint.style.backgroundColor = "transparent"
+        for(let i=0; i<otros.length; i++){
+          otros[i].className = "forMobile"
         }
       }
-      //console.log(this.state.width)
-      this.setState({width})
+      this.setState({ width })
     }
-    componentDidMount = () =>{
-      //this.changeMessage(this.state.idcategoriaActual)
+    componentDidMount = () => {
       window.scrollTo(0,0)
       this.doIn()
-      window.addEventListener("resize", this.doIn);
+      window.addEventListener("resize", this.doIn)
     }
     componentWillUnmount() {
-      window.removeEventListener("resize", this.doIn);
+      window.removeEventListener("resize", this.doIn)
     }
 
-    changeActualCategory = (index) =>{
-      let {idcategoriaActual} = this.state
-      let {width}=this.state
-      width=window.innerWidth
-      let under=document.getElementsByClassName("titleService")[index]
-      let paint=document.getElementById("paint"+index)
-      if(width>600){
-        paint.style.backgroundColor="#006"
-        under.style.textDecoration="underline"
-      }else{
-        paint.style.backgroundColor="transparent"
-        under.style.textDecoration="none"
+    changeActualCategory = (index) => {
+      let { idcategoriaActual, width } = this.state
+      width = window.innerWidth
+      let under = document.getElementsByClassName("titleService")[index]
+      let paint = document.getElementById("paint" + index)
+      if(width > 600) {
+        paint.style.backgroundColor = "#006"
+        under.style.textDecoration = "underline"
+      } else {
+        paint.style.backgroundColor = "transparent"
+        under.style.textDecoration = "none"
       }
-      if(index!=idcategoriaActual){
-        let under=document.getElementsByClassName("titleService")[idcategoriaActual]
-        under.style.textDecoration=""
-        let painted=document.getElementById("paint"+idcategoriaActual)
-        painted.style.backgroundColor="transparent"
+      if(index !== idcategoriaActual) {
+        let under = document.getElementsByClassName("titleService")[idcategoriaActual]
+        under.style.textDecoration = ""
+        let painted = document.getElementById("paint"+idcategoriaActual)
+        painted.style.backgroundColor = "transparent"
         idcategoriaActual = index
       }
 
-      //let tramites = document.getElementById("divTramitesContainer")
-      //tramites.style.animation="enter 5s linear 1"
-      let parte=document.getElementsByClassName("--sidebar")[0]
-      parte.id="bluepart"
-      setTimeout(() =>{
-        parte.id="onebluepart"
+      let parte = document.getElementsByClassName("--sidebar")[0]
+      parte.id = "bluepart"
+      setTimeout(() => {
+        parte.id = "onebluepart"
       }, 1000)
-      //this.changeMessage(idcategoriaActual)
-      this.setState({idcategoriaActual, width})
+      this.setState({ idcategoriaActual, width })
     }
 
-    activeAndSet = (numero) =>{
-      //console.log(numero);
-      let {activeArrow} = this.state
-      let {idcategoriaActual} = this.state
-      let flecha=document.getElementById("flecha"+numero);
-      //console.log(activeArrow)
-      if(idcategoriaActual===numero){
-        activeArrow=!activeArrow
-        activeArrow===true ? flecha.setAttribute("src",upArrow) : flecha.setAttribute("src",downArrow)
-        activeArrow===true ? flecha.className="downArrow arrowOpen" : flecha.className="downArrow arrowClose"
+    activeAndSet = (numero) => {
+      let { activeArrow, idcategoriaActual } = this.state
+      let flecha = document.getElementById("flecha"+numero)
+      if(idcategoriaActual === numero) {
+        activeArrow =! activeArrow
+        activeArrow === true ? flecha.setAttribute("src", upArrow) : flecha.setAttribute("src", downArrow)
+        activeArrow === true ? flecha.className = "downArrow arrowOpen" : flecha.className = "downArrow arrowClose"
 
-      }else{
-        if(activeArrow===true){
+      } else {
+        if(activeArrow === true) {
           this.viewCardsMobile(idcategoriaActual, !activeArrow)
-          let flechaB=document.getElementById("flecha"+idcategoriaActual);
-          flechaB.setAttribute("src",downArrow);
-          flechaB.className="downArrow arrowClose"
-        }else{
-          activeArrow=!activeArrow
+          let flechaB = document.getElementById("flecha"+idcategoriaActual)
+          flechaB.setAttribute("src", downArrow);
+          flechaB.className = "downArrow arrowClose"
+        } else {
+          activeArrow = !activeArrow
         }
-        flecha.setAttribute("src",upArrow);
+        flecha.setAttribute("src", upArrow)
         flecha.className="downArrow arrowOpen"
-        idcategoriaActual=numero
+        idcategoriaActual = numero
       }
       this.viewCardsMobile(numero, activeArrow)
-      this.setState({idcategoriaActual,activeArrow})
+      this.setState({ idcategoriaActual, activeArrow })
     }
 
-    viewCardsMobile = (numero, hacer) =>{
-      let actual=this.state.data[numero].categoria;
-      //console.log(actual);
-      let view=document.getElementById(actual);
-      //console.log(view);
-      //console.log(hacer)
-      hacer===true ? view.style.display="flex" : setTimeout(()=>{
-        view.style.display="none"
+    viewCardsMobile = (numero, hacer) => {
+      let actual = this.state.data[numero].categoria
+      let view = document.getElementById(actual)
+      hacer === true ? view.style.display = "flex" : setTimeout(()=> {
+        view.style.display = "none"
       }, 500)
-      let width=window.innerWidth
-      if(width<600)
-      hacer===true ? view.className="servicesMobile mobileOpenServices" : view.className="servicesMobile mobileCloseServices"
-      else{
-        view.className="servicesMobile"
+      let width = window.innerWidth
+      if(width < 600)
+      hacer===true ? view.className = "servicesMobile mobileOpenServices" : view.className = "servicesMobile mobileCloseServices"
+      else {
+        view.className = "servicesMobile"
       }
-      return 0;
     }
     render() {
         return (
@@ -185,21 +168,30 @@ class Services extends Component {
             <div id="servicesPresentation">
               <div className="white"></div>
               <p className="place">Trámites</p>
-              <img src={tramitesCover} alt="Services" id="servicesImage"/>
+              <img 
+                src={tramitesCover}
+                alt="Services"
+                id="servicesImage"
+              />
             </div>
             <div className="tramites-container">
                 <div className="--sidebar" id="onebluepart">
                     <div className="options">
                         {this.state.data.map((category, index)=>(
                             <div className="forMobile" id={"paint"+index}>
-                              <div onClick={()=>{this.activeAndSet(index)}} className="inDesktop">
-                              <p
-                              key={index + category.categoria}
-                              onClick={()=>{this.changeActualCategory(index)}}
-                              className="titleService">
-                                  {category.categoria}
-                              </p>
-                              <img src={downArrow} alt="flecha" className="downArrow" id={"flecha"+index}/>
+                              <div onClick={() => {this.activeAndSet(index)}} className="inDesktop">
+                                <p
+                                  key={index + category.categoria}
+                                  onClick={() => {this.changeActualCategory(index)}}
+                                  className="titleService">
+                                    {category.categoria}
+                                </p>
+                                <img 
+                                  src={downArrow}
+                                  alt="flecha"
+                                  className="downArrow"
+                                  id={"flecha"+index}
+                                />
                               </div>
                               <div className="servicesMobile" id={category.categoria}>
                                 {this.state.data[index].tramites.map((tramite)=>(
@@ -210,7 +202,10 @@ class Services extends Component {
                                     }
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
-                                      <img src={tramitesBack}/>
+                                      <img 
+                                        src={tramitesBack}
+                                        alt="background"
+                                        />
                                       <p>{tramite}</p>
                                     </div>
                                   </NavLink>
@@ -222,7 +217,7 @@ class Services extends Component {
                 </div>
                 <div id="divTramitesContainer">
                       <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
-                      {this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
+                      { this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
                         <NavLink to={{
                           pathname:'/contacto/',
                           aboutProps:{
@@ -230,11 +225,13 @@ class Services extends Component {
                           }
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
-                            <img src={tramitesBack}/>
+                            <img 
+                              src={tramitesBack}
+                              alt="background"
+                            />
                             <p>{tramite}</p>
                           </div>
                         </NavLink>
-                        //console.log(tramite.tramites[index])
                       ))}
                     </div>
             </div>

@@ -1,7 +1,5 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import sandClock from '../../static/assets/Icons/sand-clock.png'
-import money from '../../static/assets/Icons/money (2).png'
 import leftArrow from '../../static/assets/Icons/left-arrow.png'
 import rightArrow from '../../static/assets/Icons/right-arrow.png'
 import leftMobile from '../../static/assets/Icons/left-arrow.svg'
@@ -17,8 +15,8 @@ const Procedures = (props) => (
                 </div>
             </div>
             <div className="arrowContainerMobile">
-                {props.actual>0 ? <img src={leftMobile} onClick={()=>{props.up(false)}}/> : null }
-                {props.actual<4 ? <img src={rightMobile} onClick={()=>{props.up(true)}}/> : null }
+                {props.actual>0 ? <img alt="left" src={leftMobile} onClick={()=>{props.up(false)}}/> : null }
+                {props.actual<4 ? <img alt="right" src={rightMobile} onClick={()=>{props.up(true)}}/> : null }
             </div>
             <div className="borderDivMobile">
                 <div className="servicesContainerMobile">
@@ -37,7 +35,13 @@ const Procedures = (props) => (
         </div>
         <div className="proceduresContainer">
             <div className="arrowTopContainer">
-                <img className="arrowsTop" src={leftArrow} onClick={()=>{props.moveTop(false)}}  style={{display : props.minOp<=0 ? 'none' : 'block'}}/>
+                <img 
+                    className="arrowsTop" 
+                    src={leftArrow} 
+                    onClick={()=>{props.moveTop(false)}}  
+                    style={{display : props.minOp<=0 ? 'none' : 'block'}}
+                    alt="left"
+                />
             </div>
             {props.data.map((tramite, index)=>(
                 <div className="service" onClick={()=>{props.openService(index)}} id={"blackService"+index}>
@@ -45,12 +49,23 @@ const Procedures = (props) => (
                 </div>
             ))}
             <div className="arrowTopContainer">
-                <img className="arrowsTop" src={rightArrow} onClick={()=>{props.moveTop(true)}} style={{display: props.maxOp>=4 ? "none" : "block"}}/>
+                <img 
+                    className="arrowsTop"
+                    src={rightArrow}
+                    onClick={()=>{props.moveTop(true)}}
+                    style={{display: props.maxOp>=4 ? "none" : "block"}}
+                    alt="right"    
+                />
             </div>
         </div>
         <div className="otherContainerOp">
             <div className="arrowContainer">
-                <img className="arrows" src={leftArrow} onClick={()=>{props.move(false)}} />
+                <img 
+                    className="arrows" 
+                    src={leftArrow} 
+                    onClick={()=>{props.move(false)}} 
+                    alt="left"
+                />
             </div>
             <NavLink to={props.activeNav  ? 
                 {
@@ -66,7 +81,12 @@ const Procedures = (props) => (
                 </div>
             </NavLink>
             <div className="arrowContainer">
-                <img className="arrows" src={rightArrow} onClick={()=>{props.move(true)}} />
+                <img 
+                    className="arrows" 
+                    src={rightArrow} 
+                    onClick={()=>{props.move(true)}}
+                    alt="right"
+                />
             </div>
         </div>
     </div>

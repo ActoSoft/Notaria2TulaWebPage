@@ -1,6 +1,6 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import privacity from '../../../static/AvisoPrivacidad.pdf'
-import {NavLink} from 'react-router-dom'
 import './footer.scss'
 
 const Footer = (props) => (
