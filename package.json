@@ -5,6 +5,7 @@
   "homepage": "https://actosoft.github.io/Notaria2TulaWebPage/",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "@sendgrid/mail": "^6.3.1",
     "firebase": "^5.8.4",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
