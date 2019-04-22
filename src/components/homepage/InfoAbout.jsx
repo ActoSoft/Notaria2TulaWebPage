@@ -21,7 +21,7 @@ const InfoAbout = (props) => (
             <div className="infoCard">
             <img src={phone} alt="Teléfono"/>
             <p><span>(01) 773-73-2-00-75</span>
-            <span>&</span><span>(01) 773-73-201-91</span></p>
+            <span>&</span><span>(01) 773-73-2-01-91</span></p>
             </div>
         </div>
         {/*<img src={location} id="map" alt="Mapa"/>*/}
