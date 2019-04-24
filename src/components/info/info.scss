@@ -274,14 +274,6 @@
     font-size: 1em;
   }
 }
-#infoHR{
-  border: 1px solid $primary;
-  width: calc(100vw - 10px);
-  margin-left: -20vw;
-  @media screen and (min-width: 600px){
-    display: none;
-  }
-}
 .weAreDesc{
   display: flex;
   justify-content: center;

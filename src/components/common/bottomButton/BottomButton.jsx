@@ -1,6 +1,6 @@
 import React from 'react'
 import './bottomButton.scss'
-import upArrow from '../../../static/assets/Icons/left-arrow.svg'
+import upArrow from '../../../static/assets/Icons/toUp-arrow.svg'
 const BottomButton = (props) =>(
     <div id="fixedButon">
         <img 

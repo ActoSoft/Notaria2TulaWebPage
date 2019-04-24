@@ -255,6 +255,7 @@ class HomePage extends Component {
     if(this.state.data[index].tramites.length>3){
       for(let i=0;i<2;i++){
         arrows[i].style.display="block"
+        arrows[i].style.cursor="pointer"
       }
     }else{
       for(let i=0;i<2;i++){

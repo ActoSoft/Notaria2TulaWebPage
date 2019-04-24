@@ -19,7 +19,7 @@ class Info extends Component{
   }
   
   componentDidMount = () =>{
-    window.scrollTo(0,0)
+    this.props.location.aboutProps ? window.scrollTo(0,window.innerHeight) : window.scrollTo(0,0)
   }
 
 
@@ -74,7 +74,6 @@ class Info extends Component{
               <span>Notario Adscrito</span>
             </div>
           </div>
-          <hr id="infoHR"/>
           <div className="weAreDesc">
             <p>Somos miembros del <span><a href="http://www.colegiodenotarioshidalgo.org.mx/" className="extlink" target="_blank">Colegio de Notarios del Estado de Hidalgo </a></span>
             y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink" target="_blank">Colegio Nacional del Notariado Mexicano</a></span></p>

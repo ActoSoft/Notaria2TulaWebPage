@@ -87,11 +87,13 @@ class Header extends Component{
   render(){
     return(
       <div id="head" className="thisHeader">
-        <img 
-          src={logo} 
-          id="headerLogo"
-          alt="logo"
-        />
+        <NavLink to="/" className="link">
+          <img 
+            src={logo} 
+            id="headerLogo"
+            alt="logo"
+          />
+        </NavLink>
         <ul id="navbar">
           <NavLink to="/" className="link" id="deleteI">
             <li className="itemNav" id="inicio">Inicio</li>
