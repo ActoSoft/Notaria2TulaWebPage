@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import tramitesCover from '../../../static/img/TramitesBack.jpg'
-import tramitesBack from '../../../static/img/CardsTramites.jpg'
+import tramitesBackOne from '../../../static/img/CardsTramites.jpg'
+import tramitesBackTwo from '../../../static/img/About.jpg'
+import tramitesBackThree from '../../../static/img/About2.jpg'
+import tramitesBackFour from '../../../static/img/About3.jpg'
+import tramitesBackFive from '../../../static/img/Back1.jpg'
+
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
 import upArrow from '../../../static/assets/Icons/up-arrow.svg'
 import './services.scss'
@@ -58,6 +63,13 @@ class Services extends Component {
                         "Asociación Civil"
                     ]
                 },
+            ],
+            backImage:[
+              tramitesBackOne,
+              tramitesBackTwo,
+              tramitesBackThree,
+              tramitesBackFour,
+              tramitesBackFive
             ],
             idcategoriaActual: 0,
             activeArrow:false,
@@ -203,7 +215,7 @@ class Services extends Component {
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
                                       <img 
-                                        src={tramitesBack}
+                                        src={this.state.backImage[index]}
                                         alt="background"
                                         />
                                       <p>{tramite}</p>
@@ -226,7 +238,7 @@ class Services extends Component {
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
                             <img 
-                              src={tramitesBack}
+                              src={this.state.backImage[this.state.idcategoriaActual]}
                               alt="background"
                             />
                             <p>{tramite}</p>
