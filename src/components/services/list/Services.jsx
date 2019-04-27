@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import tramitesCover from '../../../static/img/TramitesBack.jpg'
-import tramitesBackOne from '../../../static/img/CardsTramites.jpg'
-import tramitesBackTwo from '../../../static/img/About.jpg'
-import tramitesBackThree from '../../../static/img/About2.jpg'
-import tramitesBackFour from '../../../static/img/About3.jpg'
-import tramitesBackFive from '../../../static/img/Back1.jpg'
+import tramites0 from '../../../static/img/tramites0.jpg'
+import tramites1 from '../../../static/img/tramites1.jpg'
+import tramites2 from '../../../static/img/tramites2.jpg'
+import tramites3 from '../../../static/img/tramites3.jpg'
+import tramites4 from '../../../static/img/tramites4.jpg'
+import tramites5 from '../../../static/img/tramites5.jpg'
+import tramites6 from '../../../static/img/tramites6.jpg'
 
 import downArrow from '../../../static/assets/Icons/angle-arrow-down.svg'
 import upArrow from '../../../static/assets/Icons/up-arrow.svg'
@@ -65,17 +67,26 @@ class Services extends Component {
                 },
             ],
             backImage:[
-              tramitesBackOne,
-              tramitesBackTwo,
-              tramitesBackThree,
-              tramitesBackFour,
-              tramitesBackFive
+              tramites0,
+              tramites1,
+              tramites2,
+              tramites3,
+              tramites4,
+              tramites5,
+              tramites6
             ],
             idcategoriaActual: 0,
             activeArrow:false,
             width: 0,
             message: "Hola. Deseo obtener información acerca del trámite"
         }
+    }
+
+    imageService = () =>{
+
+      let number = Math.floor(Math.random() * (+6 - +0)) +0
+      //console.log(number);
+      return number;
     }
 
     doIn = () => {
@@ -215,7 +226,7 @@ class Services extends Component {
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
                                       <img 
-                                        src={this.state.backImage[index]}
+                                        src={this.state.backImage[this.imageService()]}
                                         alt="background"
                                         />
                                       <p>{tramite}</p>
@@ -238,7 +249,7 @@ class Services extends Component {
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
                             <img 
-                              src={this.state.backImage[this.state.idcategoriaActual]}
+                              src={this.state.backImage[this.imageService()]}
                               alt="background"
                             />
                             <p>{tramite}</p>
