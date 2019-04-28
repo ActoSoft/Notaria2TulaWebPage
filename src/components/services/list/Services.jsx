@@ -75,6 +75,7 @@ class Services extends Component {
               tramites5,
               tramites6
             ],
+            cont:[],
             idcategoriaActual: 0,
             activeArrow:false,
             width: 0,
@@ -83,10 +84,34 @@ class Services extends Component {
     }
 
     imageService = () =>{
-
-      let number = Math.floor(Math.random() * (+6 - +0)) +0
-      //console.log(number);
-      return number;
+      let { cont } = this.state 
+      cont = []
+      let asing = false
+      let number
+      let min = 0
+      //console.log(cont.length)
+      while( cont.length < 7){
+        number = Math.floor(Math.random() * (+7 - +min)) +min
+        if( cont.length === 0 ) {
+          cont.push( number )
+        }else {
+          for( let i=0; i<cont.length; i++ ) {
+            if( cont[i] === number ) {
+              asing = false
+              break
+            } else {
+              asing = true;
+            }
+          }
+          
+          if(asing === true) {
+            cont.push( number )
+          }
+        }
+      }
+      //console.log(cont)
+      this.setState({ cont })
+      //console.log(number)
     }
 
     doIn = () => {
@@ -111,6 +136,7 @@ class Services extends Component {
       this.setState({ width })
     }
     componentDidMount = () => {
+      this.imageService()
       window.scrollTo(0,0)
       this.doIn()
       window.addEventListener("resize", this.doIn)
@@ -120,6 +146,9 @@ class Services extends Component {
     }
 
     changeActualCategory = (index) => {
+
+      this.imageService()
+
       let { idcategoriaActual, width } = this.state
       width = window.innerWidth
       let under = document.getElementsByClassName("titleService")[index]
@@ -217,7 +246,7 @@ class Services extends Component {
                                 />
                               </div>
                               <div className="servicesMobile" id={category.categoria}>
-                                {this.state.data[index].tramites.map((tramite)=>(
+                                {this.state.data[index].tramites.map((tramite, i)=>(
                                   <NavLink to={{
                                     pathname:'/contacto/',
                                     aboutProps:{
@@ -226,7 +255,7 @@ class Services extends Component {
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
                                       <img 
-                                        src={this.state.backImage[this.imageService()]}
+                                        src={this.state.backImage[this.state.cont[i]]}
                                         alt="background"
                                         />
                                       <p>{tramite}</p>
@@ -240,7 +269,7 @@ class Services extends Component {
                 </div>
                 <div id="divTramitesContainer">
                       <span>{this.state.data[this.state.idcategoriaActual].categoria}</span>
-                      { this.state.data[this.state.idcategoriaActual].tramites.map((tramite)=>(
+                      { this.state.data[this.state.idcategoriaActual].tramites.map((tramite, index)=>(
                         <NavLink to={{
                           pathname:'/contacto/',
                           aboutProps:{
@@ -249,7 +278,7 @@ class Services extends Component {
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
                             <img 
-                              src={this.state.backImage[this.imageService()]}
+                              src={this.state.backImage[this.state.cont[index]]}
                               alt="background"
                             />
                             <p>{tramite}</p>
