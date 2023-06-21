@@ -5,7 +5,7 @@ import './footer.scss'
 const Footer = (props) => (
     <div>
     <div id="footer">
-      <span>Powered By: <a href="https://www.facebook.com/ActosoftCommunity/" target="_blank" rel="noreferrer">Actosoft</a></span>
+      <span>Poweeeered By: <a href="https://www.facebook.com/ActosoftCommunity/" target="_blank" rel="noreferrer">Actosoft</a></span>
       <span id="privacityAdvice"><a href={privacity} target="_blank" rel="noreferrer">Aviso de privacidad</a></span>
       <span>Todos los derechos reservados {new Date().getFullYear()}</span>
     </div>
