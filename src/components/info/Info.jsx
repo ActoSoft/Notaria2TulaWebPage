@@ -16,7 +16,7 @@ class Info extends Component{
 
     }
   }
-  
+
   componentDidMount = () =>{
     window.scrollTo(0,0)
   }
@@ -75,8 +75,8 @@ class Info extends Component{
           </div>
           <hr id="infoHR"/>
           <div className="weAreDesc">
-            <p>Somos miembros del <span><a href="http://www.colegiodenotarioshidalgo.org.mx/" className="extlink" target="_blank">Colegio de Notarios del Estado de Hidalgo </a></span>
-            y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink" target="_blank">Colegio Nacional del Notariado Mexicano</a></span></p>
+            <p>Somos miembros del <span><a href="http://www.colegiodenotarioshidalgo.org.mx/" className="extlink" target="_blank" rel="noreferrer">Colegio de Notarios del Estado de Hidalgo </a></span>
+            y del <span><a href="https://www.notariadomexicano.org.mx/" className="extlink" target="_blank" rel="noreferrer">Colegio Nacional del Notariado Mexicano</a></span></p>
              <img src={colegioNotarios} alt="Colegio de Notarios Logo"/>
              <img src={notariadoMexicano} alt="Notariado Mexicano Logo"/>
           </div>

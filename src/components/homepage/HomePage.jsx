@@ -1,3 +1,4 @@
+/* eslint-disable no-multi-str */
 import React, { Component } from 'react'
 import './homepage.scss'
 import back1 from '../../static/img/Back1.jpg'
@@ -21,7 +22,7 @@ class HomePage extends Component {
         ],
         cont: 0,
         interval: null,
-        actualImage: null, 
+        actualImage: null,
         classChange: false,
         data: [
           {
@@ -128,7 +129,7 @@ class HomePage extends Component {
     let all=document.getElementsByClassName('service')
     let select = document.getElementsByClassName('service')[index]
     let pSelect = document.getElementsByClassName('serviceTitle')[index]
-  
+
     let arrowsTop = document.getElementsByClassName("arrowsTop")
     let container=document.getElementsByClassName("proceduresContainer")[0]
     let widthUtil=container.getBoundingClientRect()
@@ -143,8 +144,8 @@ class HomePage extends Component {
 
     for(let i=0;i<2;i++){
       contador%2===0 ?
-      arrowsTop[i].className="arrowsTop notSeeArrow" 
-      : 
+      arrowsTop[i].className="arrowsTop notSeeArrow"
+      :
       setTimeout(()=>{
         arrowsTop[i].className="arrowsTop seeArrow"
       },500)
@@ -166,7 +167,6 @@ class HomePage extends Component {
       }
     }
 
-    let size=select.width
     let position = select.getBoundingClientRect();
     if(contador%2===0){
       leftSelect = select.offsetLeft
@@ -199,7 +199,7 @@ class HomePage extends Component {
           container.style.minHeight=""
         }, 500)
       }, 500)
-  
+
         for(let i=0;i<index;i++){
           all[i].className="service noneLeft"
           setTimeout(()=>{
@@ -229,8 +229,8 @@ class HomePage extends Component {
           uno.style.animation=""
           container.style.minHeight=""
         }, 1000)
-  
-  
+
+
       setTimeout(()=>{
         for(let i=0;i<index;i++){
           all[i].className="service flexLeft"
@@ -247,7 +247,7 @@ class HomePage extends Component {
           }, 500)
         }
       }, 500)
-  
+
     }
 
     let arrows=document.getElementsByClassName("arrows")
@@ -260,14 +260,14 @@ class HomePage extends Component {
         arrows[i].style.display="none"
       }
     }
-  
-  
+
+
     let one = document.styleSheets[0].rules[0]
     let other = document.styleSheets[0]
     setTimeout(()=>{
       other.removeRule(one)
     },1000)
-  
+
     let options = document.getElementsByClassName("otherContainerOp")[0]
     if(contador%2===0){
       setTimeout(()=>{
@@ -314,7 +314,7 @@ class HomePage extends Component {
         op.appendChild(newSpan);
       }
     }
-    
+
     let maximum = this.state.data[globalOption].tramites.length-1
 
     previusOption<0 ? arrows[0].style.display="none" : arrows[0].style.display="block"
@@ -322,7 +322,7 @@ class HomePage extends Component {
 
     this.setState({contador,leftSelect, globalOption, nextOption, previusOption})
   }
-  
+
   move = (direction) =>{
     let {globalOption} = this.state
     let {nextOption} = this.state
@@ -333,7 +333,7 @@ class HomePage extends Component {
     let optionsHTML = document.getElementsByClassName('optionService')
     let options = [optionsHTML.length]
     let right, left
-  
+
     for(let i=0;i<optionsHTML.length;i++){
       options[i]=optionsHTML[i]
     }
@@ -358,7 +358,7 @@ class HomePage extends Component {
       animationsKeyFrames[3]="@keyframes animationFour{from{left:"+leftPosition[2]+"px;width:30%;opacity:1;}to{left:100%;width:0%;opacity:0;}}"
     }
 
-    animationsKeyFrames.map((animation)=>{
+    animationsKeyFrames.forEach((animation) => {
       document.styleSheets[0].insertRule(animation);
     })
 
@@ -481,7 +481,7 @@ class HomePage extends Component {
         optionsHTML[2].style.position=""
 
         optionsHTML[3].style.display="none"
-        
+
         container.removeChild(optionsHTML[3])
 
         first.style.animation=""
@@ -499,7 +499,7 @@ class HomePage extends Component {
           other.removeRule(document.styleSheets[0].rules[0])
         }
       },300)
-  
+
       previusOption-=1
       if(previusOption<0){
         arrows[0].className="arrows notSeeArrow"
@@ -519,7 +519,7 @@ class HomePage extends Component {
     }
 
       this.setState({nextOption, previusOption, globalOption})
-  
+
   }
 
   moveTop = (direction) =>{
@@ -541,12 +541,10 @@ class HomePage extends Component {
     let top
     let animation = [4]
 
-    let ids=["blackService0","blackService1","blackService2","blackService3","blackService4"]
-
     container.style.position="relative"
     container.style.justifyContent="space-between"
     top = allOptions[minOp+1].offsetTop
-    
+
     if(direction){
       left[0]=allOptions[minOp-1].offsetLeft
       left[1]=allOptions[minOp].offsetLeft
@@ -572,7 +570,7 @@ class HomePage extends Component {
       animation[4]="@keyframes animationTFour{from{position:absolute;top:"+(top-10)+"px;left:"+(left[2]-10)+"px;width:"+width+"px;height:"+width+"px;opacity:1;}to{position:absolute;top:"+(top-10)+"px;left:"+(left[2]+10+width)+"px;width:0px;height:0px;opacity:0;}}"
     }
 
-    animation.map((animate)=>{
+    animation.forEach((animate) => {
       document.styleSheets[0].insertRule(animate);
     })
 
@@ -758,7 +756,7 @@ class HomePage extends Component {
     let width=window.innerWidth
     let options = document.getElementsByClassName("service")
 
-    if(this.state.contador%2!=0){
+    if (this.state.contador % 2 !== 0){
       this.openService(this.state.globalOption)
     }
 
@@ -843,16 +841,16 @@ class HomePage extends Component {
   render(){
     return(
       <div id="homeContent">
-        <Slider 
+        <Slider
           actualImage={this.state.actualImage}
           goKnowUs={this.goKnowUs}
         />
 
-        <About 
+        <About
           imageMobile={Sign}
         />
-        
-        <Procedures 
+
+        <Procedures
           data={this.state.data}
           actualService={this.state.globalOption}
           min={this.state.min}
@@ -868,7 +866,7 @@ class HomePage extends Component {
           message={this.state.message}
           activeNL={this.activeNL}
         />
-        
+
         <InfoAbout />
 
       </div>

@@ -115,7 +115,7 @@ class Services extends Component {
         paint.style.backgroundColor="transparent"
         under.style.textDecoration="none"
       }
-      if(index!=idcategoriaActual){
+      if(index !== idcategoriaActual){
         let under=document.getElementsByClassName("titleService")[idcategoriaActual]
         under.style.textDecoration=""
         let painted=document.getElementById("paint"+idcategoriaActual)
@@ -210,7 +210,7 @@ class Services extends Component {
                                     }
                                   }} className="sendMessageContactMobile">
                                     <div className="otro">
-                                      <img src={tramitesBack}/>
+                                      <img src={tramitesBack} alt="tramitesback"/>
                                       <p>{tramite}</p>
                                     </div>
                                   </NavLink>
@@ -230,7 +230,7 @@ class Services extends Component {
                           }
                         }} className="sendMessageContact">
                           <div className="tramiteCard" >
-                            <img src={tramitesBack}/>
+                            <img src={tramitesBack} alt="tramitesback"/>
                             <p>{tramite}</p>
                           </div>
                         </NavLink>

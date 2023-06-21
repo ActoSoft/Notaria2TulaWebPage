@@ -16,7 +16,6 @@ class Header extends Component{
       let y=window.scrollY
       let header=document.getElementById("head")
       let logo=document.getElementById("headerLogo")
-      //let options=document.getElementsByClassName("itemNav")
       if(y>height){
         header.className="onChangeHeader"
         logo.className="changeLogo"
@@ -28,9 +27,6 @@ class Header extends Component{
 
         logo.style.height="9vh"
 
-        /*for(let i=0;i<options.length;i++){
-          options[i].style.color="#fff"
-        }*/
       }else{
         header.className="onOriginalHeader"
         logo.className="originalLogo"
@@ -51,8 +47,6 @@ class Header extends Component{
       let y=window.scrollY
       let header=document.getElementsByClassName("header-top")[0]
       let error=document.getElementById("anError")
-      //console.log(header)
-      //let options=document.getElementsByClassName("itemNav")
       if(y>height){
         header.className="header-top onChangeHeader"
 
@@ -61,10 +55,6 @@ class Header extends Component{
         header.style.webkitBoxShadow="0 0 3px rgb(0,0,0,0.21)"
 
         error.style.position="static"
-
-        /*for(let i=0;i<options.length;i++){
-          options[i].style.color="#fff"
-        }*/
       }else{
         header.className="header-top onOriginalHeader"
         header.style.position="relative"
@@ -73,9 +63,6 @@ class Header extends Component{
 
         error.style.position="fixed"
 
-        /*for(let i=0;i<options.length;i++){
-          options[i].style.color="#000"
-        }*/
       }
     }
   }
@@ -87,7 +74,7 @@ class Header extends Component{
   render(){
     return(
       <div id="head" className="thisHeader">
-        <img src={logo} id="headerLogo"/>
+        <img src={logo} alt="logo" id="headerLogo"/>
         <ul id="navbar">
           <NavLink to="/" className="link" id="deleteI">
             <li className="itemNav" id="inicio">Inicio</li>

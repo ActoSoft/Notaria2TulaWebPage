@@ -1,14 +1,13 @@
 import React from 'react'
 import privacity from '../../../static/AvisoPrivacidad.pdf'
-import {NavLink} from 'react-router-dom'
 import './footer.scss'
 
 const Footer = (props) => (
     <div>
     <div id="footer">
-      <span>Powered By: <a href="https://www.facebook.com/ActosoftCommunity/" target="_blank">Actosoft</a></span>
-      <span id="privacityAdvice"><a href={privacity} target="_blank">Aviso de privacidad</a></span>
-      <span>Todos los derechos reservados 2019</span>
+      <span>Powered By: <a href="https://www.facebook.com/ActosoftCommunity/" target="_blank" rel="noreferrer">Actosoft</a></span>
+      <span id="privacityAdvice"><a href={privacity} target="_blank" rel="noreferrer">Aviso de privacidad</a></span>
+      <span>Todos los derechos reservados {new Date().getFullYear()}</span>
     </div>
     <div id="footer-mobile">
       <span id="privacityAdvice"><a href={privacity}>Aviso de privacidad</a></span>

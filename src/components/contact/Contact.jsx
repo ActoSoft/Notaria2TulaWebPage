@@ -4,7 +4,7 @@ import avatar from '../../static/assets/Icons/user.svg'
 import envelope from '../../static/assets/Icons/envelope.svg'
 import smartphone from '../../static/assets/Icons/smartphone.svg'
 import './contact.scss'
-import firebase from 'firebase'
+import firebase from 'firebase/compat/app'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
